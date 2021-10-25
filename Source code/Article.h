@@ -12,7 +12,6 @@ class Article {
         string Author_id; //Mã tác giả
         string Journal_id; //Mã tạp chí
         string Publish_time; //Thời gian công bố
-        //static int art_count; // Đếm số bài báo
     public:
 
     void readf_Article(ifstream &);

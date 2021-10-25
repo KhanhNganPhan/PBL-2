@@ -5,6 +5,7 @@
 #include "Journal.h"
 #include "Article.h"
 #include "Publisher.h"
+#include "List.h"
 using namespace std;
 
 //class author
@@ -23,14 +24,14 @@ Author :: ~Author()
 
 void Author ::readf_author(ifstream &in){
     string dummy;
-    getline(in,dummy,'\n'); //lấy dòng đầu
+    getline(in,dummy,'\n');         //lấy dòng đầu
     getline(in, author_id, '|');
     getline(in,firstName,'|');
     getline(in,lastName,'|');
     getline(in,work,'|');
     getline(in,field,'|');
     getline(in,degree);
-    getline(in,dummy,'\n'); //xuống dòng
+    getline(in,dummy,'\n');         //xuống dòng
 }
 
 ostream &operator << (ostream &out, const Author &a) {
@@ -42,12 +43,12 @@ ostream &operator << (ostream &out, const Author &a) {
 //class journal
 void Journal ::readf_journal(ifstream &in){
     string dummy;
-    getline(in,dummy,'\n'); //lấy dòng đầu
+    getline(in,dummy,'\n');          //lấy dòng đầu
     getline(in, J_id, '|');
     getline(in,J_name,'|');
     getline(in,J_editor,'|');
     getline(in,Publisher_id);
-    getline(in,dummy,'\n'); //xuống dòng
+    getline(in,dummy,'\n');          //xuống dòng
 }
 
 ostream &operator << (ostream &out, const Journal &j){
@@ -59,13 +60,13 @@ ostream &operator << (ostream &out, const Journal &j){
 //class Article
 void Article ::readf_Article (ifstream &in) {
     string dummy;
-    getline(in,dummy,'\n'); //lấy dòng đầu
+    getline(in,dummy,'\n');          //lấy dòng đầu
     getline(in, Article_id, '|');
     getline(in,Article_name,'|');
     getline(in,Author_id,'|');
     getline(in,Journal_id,'|');
     getline(in,Publish_time);
-    getline(in,dummy,'\n'); //xuống dòng
+    getline(in,dummy,'\n');          //xuống dòng
 }
 
 ostream &operator << (ostream &out, const Article &a) {
@@ -77,13 +78,27 @@ ostream &operator << (ostream &out, const Article &a) {
 //class Publisher
 void Publisher::readf_Publisher(ifstream &in) {
     string dummy;
-    getline(in,dummy,'\n'); //lấy dòng đầu
+    getline(in,dummy,'\n');            //lấy dòng đầu
     getline(in, Publisher_id, '|');
     getline(in,Publisher_name);
-    getline(in,dummy,'\n'); //xuống dòng
+    getline(in,dummy,'\n');            //xuống dòng
 }
 
 ostream &operator << (ostream &out, const Publisher &p) {
     out <<p.Publisher_id << setw(5) << p.Publisher_name << endl;
     return out;
+}
+
+//class List
+int List::Author_count = 0;                 //Biến static đếm tổng số tác giả
+int List::Article_count = 0;                //Biến static đếm tổng số bài báo
+int List::Journal_count = 0;                //Biến static đếm tổng số tạp chí
+int List::Publisher_count = 0;              //Biến static đếm tổng số NXB
+
+List::~List() {
+
+}
+
+void List::List_getdata(ifstream &AuInFile, ifstream &ArtInFile, ifstream &JouInFile, ifstream &PubInFile) {
+    
 }

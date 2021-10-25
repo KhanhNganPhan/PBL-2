@@ -10,7 +10,9 @@ class Journal {
         string J_name; //Tên tạp chí
         string J_id; //Mã tạp chí
         string J_editor; //Tên tổng biên tập
-        string Publisher_id;
+        string Publisher_id; //Mã NXB
+        int Article_count; //Biến đếm số bài báo của một tạp chí
+
     public:
     void readf_journal(ifstream &in);
     friend istream &operator >> (istream &, Journal &);

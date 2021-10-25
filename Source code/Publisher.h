@@ -9,7 +9,10 @@ class Publisher {
     private:
         string Publisher_id;
         string Publisher_name; //Tên nhà xuất bản
-        //static int publisher_count; // Đếm số NXB
+        int Article_count; //Biến đếm số bài báo của một NXB
+        int Journal_count; //Biến đếm số tạp chí của một NXB
+
+
     public:
 
     void readf_Publisher(ifstream &);
