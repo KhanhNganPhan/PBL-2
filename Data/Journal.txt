@@ -1,0 +1,6 @@
+Ma tap chi|Ten tap chi				    |Ten tong bien tap	    |Ma NXB
+DTKHCN	  |Tap chi Dien tu khoa hoc va cong nghe    |GS.TSKH. Bui Van Ga    |N1
+TCKTDB	  |Tap chi Kinh te & Du Bao		    |ThS. Nguyen Le Thuy    |N2
+KHCNLN	  |Tap chi Khoa hoc va Cong nghe Lam nghiep |Tran Van Chu    	    |N3
+CKHVTD	  |Tap chi Cac khoa hoc ve Trai dat	    |ThS. CVC. Pham Thi Hieu|N1
+
