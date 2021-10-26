@@ -27,5 +27,6 @@ int main() {
     if (inFile4.fail()) cout << "Failed to open file";
     p.readf_Publisher(inFile4);
     cout << p;
+    cout << "thinh";
     return 0;
 }
