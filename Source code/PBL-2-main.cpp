@@ -7,23 +7,23 @@
 using namespace std;
 
 int main() {
-    ifstream inFile1("../Author.txt");
+    ifstream inFile1("../Data/Author.txt");
     if (inFile1.fail()) cout << "Failed to open file";
     Author a;
     a.readf_author(inFile1);
     cout << a;
-    ifstream inFile2("../Journal.txt");
+    ifstream inFile2("../Data/Journal.txt");
     if (inFile2.fail()) cout << "Failed to open file";
     Journal j;
     j.readf_journal(inFile2);
     cout <<  j;
     Article art;
-    ifstream inFile3("../Article.txt");
+    ifstream inFile3("../Data/Article.txt");
     if (inFile3.fail()) cout << "Failed to open file";
     art.readf_Article(inFile3);
     cout << art;
     Publisher p;
-    ifstream inFile4("../Publisher.txt");
+    ifstream inFile4("../Data/Publisher.txt");
     if (inFile4.fail()) cout << "Failed to open file";
     p.readf_Publisher(inFile4);
     cout << p;

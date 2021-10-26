@@ -19,7 +19,7 @@ class List {
         List();
         ~List();
         void List_getdata(ifstream &, ifstream &, ifstream &, ifstream &);
-
+        
 
 };
 
