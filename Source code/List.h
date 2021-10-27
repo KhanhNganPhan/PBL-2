@@ -4,6 +4,7 @@
 #include "Article.h"
 #include "Journal.h"
 #include "Publisher.h"
+// Forward declaration class Publisher
 class Publisher;
 class List {
     private:
@@ -19,6 +20,7 @@ class List {
         friend class Publisher;
         //List();
         ~List();
+        void get_initialNum(ifstream &);
         void List_getPublisher(ifstream &);
         friend ostream &operator << (ostream &, const List &);
 

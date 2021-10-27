@@ -4,7 +4,9 @@
 #include <string.h>
 #include <fstream>
 #include "List.h"
+
 using namespace std;
+// Forward declaration class List
 class List;
 class Publisher {
     private:

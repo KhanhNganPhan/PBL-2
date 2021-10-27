@@ -77,12 +77,14 @@ ostream &operator << (ostream &out, const Article &a) {
 
 //class Publisher
 void Publisher::readf_Publisher(ifstream &in) {
-    getline(in, Publisher_id, '|');
+    string dum;                         //dum là kí tự |
+    getline(in, Publisher_id,' ');
+    getline(in,dum,'|');                //Lấy kí tự |
     getline(in,Publisher_name,',');
 }
 
 ostream &operator << (ostream &out, const Publisher &p) {
-    out <<p.Publisher_id << setw(5) << p.Publisher_name << endl;
+    out << p.Publisher_id << setprecision(15) << p.Publisher_name << endl;
     return out;
 }
 
@@ -93,7 +95,22 @@ int List::Journal_count = 0;                //Biến static đếm tổng sô
 int List::Publisher_count = 0;              //Biến static đếm tổng số NXB
 
 List::~List() {
-
+    delete []Art;
+    delete []Auth;
+    delete []Jou;
+    delete []Pub;
+}
+void List::get_initialNum(ifstream &inFile) {
+    string ArtNum, AuthNum, JouNum, PubNum;
+    string dummyName;
+    getline(inFile,ArtNum,'\n');            //Lấy số lượng bài báo hiện tại
+    getline(inFile,AuthNum,'\n');           //Lấy số lượng tác giả hiện tại
+    getline(inFile,JouNum,'\n');            //Lấy số lượng tạp chí hiện tại
+    getline(inFile,PubNum,'\n');            //Lấy số lượng NXB hiện tại
+    Article_count = stoi(ArtNum);
+    Author_count = stoi(AuthNum);
+    Journal_count = stoi(JouNum);
+    Publisher_count = stoi(PubNum);
 }
 
 void List::List_getPublisher(ifstream &inFile) {
