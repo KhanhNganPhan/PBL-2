@@ -1,24 +1,24 @@
 Ma TG |Ho dem		|Ten	|Noi cong tac|Linh vuc nghien cuu	 |Trinh do
-NN01  |Nguyen Ngoc	|Chinh	|DHNN	     |Ngon ngu hoc va van hoc	 |PGS TS	
-NN02  |Nguyen Thi Quynh	|Hoa	|DHNN	     |Ngon ngu Anh va Dich thuat |PGS TS
-NN03  |Luu Quy		|Khuong	|DHNN	     |Ngon ngu hoc va van hoc	 |PGS TS
-DN01  |Dinh Thanh	|Viet	|DHDN	     |Ky thuat dien		 |PGS TS
-DN02  |Doan Quang	|Vinh	|DHDN	     |Ky thuat dien - Tu dong    |PGS TS
-DN03  |Bui Van		|Ga	|DHDN	     |Ky thuat co khi		 |GS TSKH
-DN04  |Truong Le Bich	|Tram	|DHDN	     |Ky thuat hoa hoc		 |TS
-DN05  |Chu Thi		|Thu	|DHDN	     |Kinh te hoc		 |TS
-BK01  |Le Kim		|Hung	|DHBK	     |Ky thuat dien		 |GS TS
-BK02  |Truong Hoai	|Chinh	|DHBK	     |Ky thuat dan dung		 |PGS TS
-BK03  |Tran Van		|Quang	|DHBK	     |Ky thuat moi truong	 |PGS TS
-BK04  |Bui Thi Minh	|Tu	|DHBK	     |Ky thuat dien		 |PGS TS
-BK05  |Pham Nang	|Van	|DHBK	     |Ky thuat dien tu		 |THS
-BK06  |Nguyen Quoc	|Minh	|DHBK	     |Ky thuat dien tu		 |TS
-BK07  |Le Thi Minh	|Chau	|DHBK	     |Ky thuat dien		 |TS
-SP01  |Vo Van		|Minh	|DHSP	     |Sinh hoc moi truong	 |PGS TS
-NL01  |Nguyen Phi	|Hung	|DNNL	     |Hoa hoc hop chat 		 |TS
-NL02  |Giang Thi Kim	|Lien	|DHNL	     |Khoa hoc Tu nhien		 |PGS TS
-NL03  |Vu Thi Thuy	|Hang	|DHNL	     |Nong nghiep va moi truong	 |TS
-NL04  |Nguyen Nhu	|Bang	|DHNL	     |Nong nghiep va moi truong	 |TS
-NL05  |Dang Thi		|Hoa	|DHLN	     |Nong nghiep va moi truong	 |TS
-YD01  |Bui Thi Kim	|Ly	|DHYD	     |Khoa hoc Y - Duoc		 |TS
-HH01  |Nguyen Thi Ha	|Phuong	|DHHH	     |Ky thuat co khi		 |THS
+NN01  |Nguyen Ngoc	|Chinh	|DHNN	     |Ngon ngu hoc va van hoc	 |PGS TS,	
+NN02  |Nguyen Thi Quynh	|Hoa	|DHNN	     |Ngon ngu Anh va Dich thuat |PGS TS,
+NN03  |Luu Quy		|Khuong	|DHNN	     |Ngon ngu hoc va van hoc	 |PGS TS,
+DN01  |Dinh Thanh	|Viet	|DHDN	     |Ky thuat dien		 |PGS TS,
+DN02  |Doan Quang	|Vinh	|DHDN	     |Ky thuat dien - Tu dong    |PGS TS,
+DN03  |Bui Van		|Ga	|DHDN	     |Ky thuat co khi		 |GS TSKH,
+DN04  |Truong Le Bich	|Tram	|DHDN	     |Ky thuat hoa hoc		 |TS,
+DN05  |Chu Thi		|Thu	|DHDN	     |Kinh te hoc		 |TS,
+BK01  |Le Kim		|Hung	|DHBK	     |Ky thuat dien		 |GS TS,
+BK02  |Truong Hoai	|Chinh	|DHBK	     |Ky thuat dan dung		 |PGS TS,
+BK03  |Tran Van		|Quang	|DHBK	     |Ky thuat moi truong	 |PGS TS,
+BK04  |Bui Thi Minh	|Tu	|DHBK	     |Ky thuat dien		 |PGS TS,
+BK05  |Pham Nang	|Van	|DHBK	     |Ky thuat dien tu		 |THS,
+BK06  |Nguyen Quoc	|Minh	|DHBK	     |Ky thuat dien tu		 |TS,
+BK07  |Le Thi Minh	|Chau	|DHBK	     |Ky thuat dien		 |TS,
+SP01  |Vo Van		|Minh	|DHSP	     |Sinh hoc moi truong	 |PGS TS,
+NL01  |Nguyen Phi	|Hung	|DNNL	     |Hoa hoc hop chat 		 |TS,
+NL02  |Giang Thi Kim	|Lien	|DHNL	     |Khoa hoc Tu nhien		 |PGS TS,
+NL03  |Vu Thi Thuy	|Hang	|DHNL	     |Nong nghiep va moi truong	 |TS,
+NL04  |Nguyen Nhu	|Bang	|DHNL	     |Nong nghiep va moi truong	 |TS,
+NL05  |Dang Thi		|Hoa	|DHLN	     |Nong nghiep va moi truong	 |TS,
+YD01  |Bui Thi Kim	|Ly	|DHYD	     |Khoa hoc Y - Duoc		 |TS,
+HH01  |Nguyen Thi Ha	|Phuong	|DHHH	     |Ky thuat co khi		 |THS,

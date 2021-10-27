@@ -1,0 +1,4 @@
+Article		|13
+Author		|23
+Journal		|4
+Publisher	|3

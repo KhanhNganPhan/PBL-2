@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <string.h>
 #include "Author.h"
 #include "Journal.h"
 #include "Article.h"
@@ -100,6 +101,7 @@ List::~List() {
     delete []Jou;
     delete []Pub;
 }
+//chưa được
 void List::get_initialNum(ifstream &inFile) {
     string ArtNum, AuthNum, JouNum, PubNum;
     string dummyName;
@@ -107,10 +109,11 @@ void List::get_initialNum(ifstream &inFile) {
     getline(inFile,AuthNum,'\n');           //Lấy số lượng tác giả hiện tại
     getline(inFile,JouNum,'\n');            //Lấy số lượng tạp chí hiện tại
     getline(inFile,PubNum,'\n');            //Lấy số lượng NXB hiện tại
-    Article_count = stoi(ArtNum);
-    Author_count = stoi(AuthNum);
-    Journal_count = stoi(JouNum);
-    Publisher_count = stoi(PubNum);
+    Article_count = atoi(ArtNum); //chưa đc
+    Author_count = atoi(AuthNum);
+    Journal_count = atoi(JouNum);
+    Publisher_count = atoi(PubNum);
+    cout << Article_count << Author_count << Journal_count << Publisher_count;
 }
 
 void List::List_getPublisher(ifstream &inFile) {
