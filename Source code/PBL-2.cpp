@@ -24,7 +24,8 @@ Author :: ~Author()
 }
 string Author ::getName()
 {
-    return (this->firstName + " " + this->lastName);
+    string fullname = firstName + " " + lastName;
+    return (fullname);
 }
 string Author ::getID()
 {
@@ -53,6 +54,13 @@ void Journal ::readf_journal(ifstream &in){
     getline(in,J_editor,'|');
     getline(in,Publisher_id,',');
 
+}
+string Journal ::getID()
+{
+    return this->J_id;
+}
+string Journal ::getName() {
+    return this->J_name;
 }
 
 ostream &operator << (ostream &out, const Journal &j){
@@ -118,7 +126,6 @@ void List::get_initialNum(ifstream &inFile) {
     Author_count = atoi(AuthNum.c_str());
     Journal_count = atoi(JouNum.c_str());
     Publisher_count = atoi(PubNum.c_str());
-    //cout << Article_count << Author_count << Journal_count << Publisher_count;
 }
 
 void List::List_getPublisher(ifstream &inFile) {
@@ -201,24 +208,36 @@ void List::List_displayAuthor()
         cout<<Auth[i];
     }
 }
-// string List ::List_getAuthorNamebyID(string Author_ID)
-// {
-//     for(int i =0;i< Author_count;i++)
-//     {
-//         if(Auth[i].getID == Author_ID) return Auth[i].getName;
-//     }
-// }
-// void List::List_displayAll()
-// {
-//     for(int i=0;i< Article_count;i++)
-//     {
-
-//     }
-// }
+string List ::List_getAuthorNamebyID(string Author_ID)
+{
+    for(int i =0; i < Author_count; i++)
+    {
+        if(Auth[i].getID() == Author_ID) return Auth[i].getName();
+    }
+    return "NULL";
+}
+string List ::List_getJournalNamebyID(string Journal_ID)
+{
+    for(int i =0; i < Journal_count; i++)
+    {
+        if(Jou[i].getID() == Journal_ID) return Jou[i].getName();
+    }
+    return "NULL";
+}
+void List::List_displayAll()
+{
+    cout<<left <<setw(15)<<"Ma bao"<<left <<setw(65)<<"Ten cong bo"<<left <<setw(25)<<"Tac gia"<<left <<setw(45)<<"Tap chi"<<left <<setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i< Article_count;i++)
+    {
+        cout <<left <<setw(15)<< Art[i].Article_id << left <<setw(65) << Art[i].Article_name <<left <<setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+        cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
+    }
+}
 
 
 
 int main() {
+
     List L;
     // Lay so luong
     ifstream inFileNum("../Data/NumOfData.txt");
@@ -228,24 +247,25 @@ int main() {
     ifstream inFile("../Data/Publisher.txt");
     if (inFile.fail()) cout << "Failed to open file";
     L.List_getPublisher(inFile);
-    //L.List_displayPublisher();
+    // L.List_displayPublisher();
 
     // Get data Article
     ifstream inFileArt("../Data/Article.txt");
     if (inFileArt.fail()) cout << "Failed to open file";
     L.List_getArticle(inFileArt);
-    //L.List_displayArticle();
+    // L.List_displayArticle();
 
     // Get data Journal
     ifstream inFileJou("../Data/Journal.txt");
     if (inFileJou.fail()) cout << "Failed to open file";
     L.List_getJournal(inFileJou);
-    //L.List_displayJournal();
+    // L.List_displayJournal();
 
     //Get data Author
     ifstream inFileAuth("../Data/Author.txt");
     if (inFileAuth.fail()) cout << "Failed to open file";
     L.List_getAuthor(inFileAuth);
-    //L.List_displayAuthor();
+    // L.List_displayAuthor();
+    L.List_displayAll();
     return 0;
 }

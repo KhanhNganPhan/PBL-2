@@ -14,9 +14,13 @@ class Journal {
         int Article_count; //Biến đếm số bài báo của một tạp chí
 
     public:
+    friend class List;
     void readf_journal(ifstream &in);
     friend istream &operator >> (istream &, Journal &);
     friend ostream &operator << (ostream &, const Journal &);
+    string getID();
+    string getName();
+
 
 };
 

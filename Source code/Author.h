@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Article.h"
 using namespace std;
-
+class List;
 class Author
 {
     private:
@@ -18,11 +18,11 @@ class Author
         int Article_count; //Biến đếm số bài báo của một tác giả
         float ranking;
     public:
+    friend class List;
     Author();
     Author(string, string, string, string, string, string);
     ~Author();
     void readf_author(ifstream &in);
-    Author getAuthorbyName(string author_name);
     string getName();
     string getID();
     friend istream &operator >> (istream &, Author &);

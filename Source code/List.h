@@ -4,8 +4,12 @@
 #include "Article.h"
 #include "Journal.h"
 #include "Publisher.h"
-// Forward declaration class Publisher
-class Publisher;
+
+class Publisher;                            // Forward declaration class Publisher
+class Article;                              // Forward declaration class Article
+class Author;                               // Forward declaration class Author
+class Journal;                              // Forward declaration class Journal
+
 class List {
     private:
         Author *Auth;
@@ -17,7 +21,11 @@ class List {
         int static Journal_count;            //Biến đếm tổng số tạp chí
         int static Publisher_count;          //Biến đếm tổng số NXB
     public:
-        friend class Publisher;
+        // friend class Publisher;
+        // friend class Article;
+        // friend class Author;
+        // friend class Journal;
+
         //List();
         ~List();
         void get_initialNum(ifstream &);
@@ -30,7 +38,8 @@ class List {
         void List_getAuthor(ifstream &);
         void List_displayAuthor();
         void List_displayAll();
-        string List_getAuthorNamebyID(string );
+        string List_getAuthorNamebyID(string);
+        string List_getJournalNamebyID(string);
 
 };
 

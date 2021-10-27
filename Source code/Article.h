@@ -4,7 +4,7 @@
 #include <string.h>
 #include <fstream>
 using namespace std;
-
+class List;
 class Article {
     private:
         string Article_id;
@@ -13,10 +13,9 @@ class Article {
         string Journal_id; //Mã tạp chí
         string Publish_time; //Thời gian công bố
     public:
-
+    friend class List;
     void readf_Article(ifstream &);
     friend ostream &operator << (ostream &, const Article &);
-
 };
 
 
