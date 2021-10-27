@@ -101,18 +101,22 @@ List::~List() {
     delete []Jou;
     delete []Pub;
 }
-//chưa được
+//được rồi chạy thử đi xong bỏ dòng cout
 void List::get_initialNum(ifstream &inFile) {
     string ArtNum, AuthNum, JouNum, PubNum;
     string dummyName;
-    getline(inFile,ArtNum,'\n');            //Lấy số lượng bài báo hiện tại
-    getline(inFile,AuthNum,'\n');           //Lấy số lượng tác giả hiện tại
-    getline(inFile,JouNum,'\n');            //Lấy số lượng tạp chí hiện tại
-    getline(inFile,PubNum,'\n');            //Lấy số lượng NXB hiện tại
-    Article_count = atoi(ArtNum); //chưa đc
-    Author_count = atoi(AuthNum);
-    Journal_count = atoi(JouNum);
-    Publisher_count = atoi(PubNum);
+    getline(inFile,dummyName,'|');
+    getline(inFile,ArtNum,'\n');                //Lấy số lượng bài báo hiện tại
+    getline(inFile,dummyName,'|');
+    getline(inFile,AuthNum,'\n');               //Lấy số lượng tác giả hiện tại
+    getline(inFile,dummyName,'|');
+    getline(inFile,JouNum,'\n');                //Lấy số lượng tạp chí hiện tại
+    getline(inFile,dummyName,'|');
+    getline(inFile,PubNum);                     //Lấy số lượng NXB hiện tại
+    Article_count = atoi(ArtNum.c_str());
+    Author_count = atoi(AuthNum.c_str());
+    Journal_count = atoi(JouNum.c_str());
+    Publisher_count = atoi(PubNum.c_str());
     cout << Article_count << Author_count << Journal_count << Publisher_count;
 }
 
