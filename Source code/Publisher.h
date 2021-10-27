@@ -3,8 +3,9 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
+#include "List.h"
 using namespace std;
-
+class List;
 class Publisher {
     private:
         string Publisher_id;
@@ -14,9 +15,10 @@ class Publisher {
 
 
     public:
-
+    friend class List;
     void readf_Publisher(ifstream &);
     friend ostream &operator << (ostream &, const Publisher &);
+    friend ostream &operator << (ostream &, const List &);
 
 };
 

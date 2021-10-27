@@ -77,11 +77,8 @@ ostream &operator << (ostream &out, const Article &a) {
 
 //class Publisher
 void Publisher::readf_Publisher(ifstream &in) {
-    string dummy;
-    getline(in,dummy,'\n');            //lấy dòng đầu
     getline(in, Publisher_id, '|');
-    getline(in,Publisher_name);
-    getline(in,dummy,'\n');            //xuống dòng
+    getline(in,Publisher_name,',');
 }
 
 ostream &operator << (ostream &out, const Publisher &p) {
@@ -99,6 +96,20 @@ List::~List() {
 
 }
 
-void List::List_getdata(ifstream &AuInFile, ifstream &ArtInFile, ifstream &JouInFile, ifstream &PubInFile) {
-    
+void List::List_getPublisher(ifstream &inFile) {
+    string dummy;
+    getline(inFile,dummy,'\n');
+    this->Pub= new Publisher[4];
+    for (int i=0; i<3; i++) 
+    {
+        string dummy2;
+        Pub[i].readf_Publisher(inFile);
+        getline(inFile,dummy2,'\n');            //xuống dòng
+    }
 }
+ostream &operator << (ostream &out, const List &L) {
+    for (int i=0; i<3; i++)
+    out<< L.Pub[i];
+    return out;
+}
+
