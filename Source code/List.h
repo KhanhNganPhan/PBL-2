@@ -22,7 +22,15 @@ class List {
         ~List();
         void get_initialNum(ifstream &);
         void List_getPublisher(ifstream &);
-        friend ostream &operator << (ostream &, const List &);
+        void List_displayPublisher();
+        void List_getArticle(ifstream &);
+        void List_displayArticle();
+        void List_getJournal(ifstream &);
+        void List_displayJournal();
+        void List_getAuthor(ifstream &);
+        void List_displayAuthor();
+        void List_displayAll();
+        string List_getAuthorNamebyID(string );
 
 };
 

@@ -23,6 +23,8 @@ class Author
     ~Author();
     void readf_author(ifstream &in);
     Author getAuthorbyName(string author_name);
+    string getName();
+    string getID();
     friend istream &operator >> (istream &, Author &);
     friend ostream &operator << (ostream &, const Author &);
 
