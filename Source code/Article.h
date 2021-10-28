@@ -12,6 +12,7 @@ class Article {
         string Author_id; //Mã tác giả
         string Journal_id; //Mã tạp chí
         string Publish_time; //Thời gian công bố
+        int Time_count =0;    
     public:
     friend class List;
     void readf_Article(ifstream &);

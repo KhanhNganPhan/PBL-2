@@ -88,8 +88,7 @@ ostream &operator << (ostream &out, const Article &a) {
 //class Publisher
 void Publisher::readf_Publisher(ifstream &in) {
     string dum;                         //dum là kí tự |
-    getline(in, Publisher_id,' ');
-    getline(in,dum,'|');                //Lấy kí tự |
+    getline(in,Publisher_id,'|');       //Lấy kí tự |
     getline(in,Publisher_name,',');
 }
 
@@ -233,8 +232,67 @@ void List::List_displayAll()
         cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
     }
 }
+void List::List_displayNumofArtPerAuth()
+{
+    for(int i=0;i<Author_count;i++)
+    {
+        {
+            for(int j =0; j< Article_count;j++)
+            {
+                if(Auth[i].author_id == Art[j].Author_id) Auth[i].Article_count+=1;
+            }
+        }
+    }
+    cout<<left<<setw(25)<<"Tac gia"<<left<<setw(10)<<"So bai bao"<<endl;
+    for(int i=0;i< Author_count;i++)
+    {
+        cout<<left<<setw(25)<<Auth[i].getName()<<left<<setw(10)<<Auth[i].Article_count<<endl;
 
-
+    }
+}
+void List::List_displayNumofArtPerJour()
+{
+    for(int i=0;i<Journal_count;i++)
+    {
+        for(int j=0;j<Article_count;j++)
+        {
+            if(Jou[i].J_id == Art[j].Journal_id) Jou[i].Article_count +=1;
+        }
+    }
+    cout<<left<<setw(50)<<"Tap chi"<<left<<setw(10)<<"So bai bao"<<endl;
+    for(int i=0;i<Journal_count;i++)
+    {
+        cout<<left<<setw(50)<<Jou[i].getName()<<left<<setw(10)<<Jou[i].Article_count<<endl;
+    }
+}
+// Thống kê số lượng bài báo của mỗi NXB 
+string List::List_getPublisherIDbyJourID(string Journal_ID)
+{
+    for(int i=0;i<Journal_count;i++)
+    {
+        if(Jou[i].J_id == Journal_ID ) return Jou[i].Publisher_id;
+    }
+    return "NULL";
+}
+void List:: List_displayNumofArtPerPubl()
+{
+    for(int i=0;i<Publisher_count;i++)
+    {
+        for(int j =0;j < Article_count;j++)
+        {
+            if(Pub[i].Publisher_id == this->List_getPublisherIDbyJourID(Art[j].Journal_id ) ) Pub[i].Article_count+=1;
+        }
+    }
+    cout<<left<<setw(40)<<"Nha xuat ban"<<left<<setw(10)<<"So bai bao"<<endl;
+    for(int i=0;i<Publisher_count;i++)
+    {
+        cout<<left<<setw(40)<<Pub[i].Publisher_name<<left<<setw(10)<<Pub[i].Article_count<<endl;
+    }
+}
+void List ::List_displayNumofArtPerYear()
+{
+    
+}
 
 int main() {
 
@@ -247,25 +305,30 @@ int main() {
     ifstream inFile("../Data/Publisher.txt");
     if (inFile.fail()) cout << "Failed to open file";
     L.List_getPublisher(inFile);
-    // L.List_displayPublisher();
+    L.List_displayPublisher(); 
 
     // Get data Article
     ifstream inFileArt("../Data/Article.txt");
     if (inFileArt.fail()) cout << "Failed to open file";
     L.List_getArticle(inFileArt);
-    // L.List_displayArticle();
+    //L.List_displayArticle();
 
     // Get data Journal
     ifstream inFileJou("../Data/Journal.txt");
     if (inFileJou.fail()) cout << "Failed to open file";
     L.List_getJournal(inFileJou);
-    // L.List_displayJournal();
+    //L.List_displayJournal();
 
     //Get data Author
     ifstream inFileAuth("../Data/Author.txt");
     if (inFileAuth.fail()) cout << "Failed to open file";
     L.List_getAuthor(inFileAuth);
-    // L.List_displayAuthor();
-    L.List_displayAll();
+    //L.List_displayAuthor();
+
+    //L.List_displayAll();
+    // L.List_displayNumofArtPerAuth();
+    // L.List_displayNumofArtPerJour();
+    //L.List_displayNumofArtPerPubl();
+
     return 0;
 }

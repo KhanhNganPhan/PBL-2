@@ -11,7 +11,7 @@ class Journal {
         string J_id; //Mã tạp chí
         string J_editor; //Tên tổng biên tập
         string Publisher_id; //Mã NXB
-        int Article_count; //Biến đếm số bài báo của một tạp chí
+        int Article_count =0; //Biến đếm số bài báo của một tạp chí
 
     public:
     friend class List;

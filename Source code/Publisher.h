@@ -12,8 +12,8 @@ class Publisher {
     private:
         string Publisher_id;
         string Publisher_name; //Tên nhà xuất bản
-        int Article_count; //Biến đếm số bài báo của một NXB
-        int Journal_count; //Biến đếm số tạp chí của một NXB
+        int Article_count =0; //Biến đếm số bài báo của một NXB
+        int Journal_count =0; //Biến đếm số tạp chí của một NXB
 
 
     public:

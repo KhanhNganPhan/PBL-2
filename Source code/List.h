@@ -29,17 +29,22 @@ class List {
         //List();
         ~List();
         void get_initialNum(ifstream &);
-        void List_getPublisher(ifstream &);
-        void List_displayPublisher();
-        void List_getArticle(ifstream &);
-        void List_displayArticle();
-        void List_getJournal(ifstream &);
-        void List_displayJournal();
-        void List_getAuthor(ifstream &);
-        void List_displayAuthor();
-        void List_displayAll();
+        void List_getPublisher(ifstream &); // Lấy dữ liệu từ file Publisher.txt
+        void List_displayPublisher(); // In dữ liệu từ file Publisher.txt
+        void List_getArticle(ifstream &); // Lấy dữ liệu từ file Article.txt
+        void List_displayArticle(); // In dữ liệu từ file Article.txt
+        void List_getJournal(ifstream &); // Lấy dữ liệu từ file Journal.txt
+        void List_displayJournal(); // In dữ liệu từ file Journal.txt
+        void List_getAuthor(ifstream &); // Lấy dữ liệu từ file Author.txt
+        void List_displayAuthor(); // In dữ liệu ra từ file Author.txt
+        void List_displayAll(); // In thông tin của tất cả bài báo
+        void List_displayNumofArtPerAuth(); // Thống kê số lượng bài báo của mỗi tác giả
+        void List_displayNumofArtPerJour(); // Thống kê số lượng bài báo của mỗi tạp chí
+        void List_displayNumofArtPerPubl(); // Thống kê số lượng bài báo của mỗi nhà xuất bản
+        void List_displayNumofArtPerYear(); // Thống kê số lượng bài báo của mỗi năm
         string List_getAuthorNamebyID(string);
         string List_getJournalNamebyID(string);
+        string List_getPublisherIDbyJourID(string);
 
 };
 
