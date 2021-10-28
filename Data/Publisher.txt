@@ -2,3 +2,6 @@ Ma NXB|Ten NXB
 N1    |NXB Khoa hoc tu nhien va Cong nghe,
 N2    |NXB Cuc thong tin Khoa hoc,
 N3    |NXB Tong cuc Lam Nghiep,
+N4    |NXB Khoa hoc va Vu tru,
+N5    |NXB Tong cuc Thong Ke,
+N6    |NXB Bo Thong tin va Truyen Thong,
