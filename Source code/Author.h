@@ -20,13 +20,15 @@ class Author
     public:
     friend class List;
     Author();
-    Author(string, string, string, string, string, string);
+    Author(const Author &);
     ~Author();
     void readf_author(ifstream &in);
+    void setAuthorID();
     string getName();
     string getID();
     friend istream &operator >> (istream &, Author &);
     friend ostream &operator << (ostream &, const Author &);
+    friend int getAuthorCountfromList();                        //Hàm friend lấy SL author từ class List
 
 };
 

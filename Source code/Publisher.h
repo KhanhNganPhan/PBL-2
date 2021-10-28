@@ -6,15 +6,14 @@
 #include "List.h"
 
 using namespace std;
-// Forward declaration class List
-class List;
+
+class List;                     // Forward declaration class List
 class Publisher {
     private:
         string Publisher_id;
         string Publisher_name; //Tên nhà xuất bản
         int Article_count =0; //Biến đếm số bài báo của một NXB
         int Journal_count =0; //Biến đếm số tạp chí của một NXB
-
 
     public:
     friend class List;

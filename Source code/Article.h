@@ -17,6 +17,10 @@ class Article {
     friend class List;
     void readf_Article(ifstream &);
     friend ostream &operator << (ostream &, const Article &);
+    void editArticle_Name();
+    void editArticle_Author();
+    void editArticle_Journal();
+    void editArticle_Time();
 };
 
 

@@ -1,4 +1,4 @@
 Article		|13
 Author		|23
 Journal		|6
-Publisher	|3
+Publisher	|6
