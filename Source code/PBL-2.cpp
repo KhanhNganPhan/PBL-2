@@ -563,6 +563,69 @@ void List::List_displayArtByYear()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////////////////////////////Ghi mới vào file////////////////////////////////////////////////
 void List::List_overwriteNewAuthor() {
     ofstream outFile("../Data/AuthorTest.txt", ofstream::trunc);
@@ -576,13 +639,8 @@ void List::List_overwriteNewAuthor() {
         outFile <<  Auth[i].field << "|";
         outFile <<  Auth[i].degree << ",\n";
 
-
     }
     outFile.close();
-
-    
-
-
 }
 
 
