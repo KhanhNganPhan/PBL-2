@@ -562,6 +562,30 @@ void List::List_displayArtByYear()
 }
 
 
+
+//////////////////////////////////////////////////////////////Ghi mới vào file////////////////////////////////////////////////
+void List::List_overwriteNewAuthor() {
+    ofstream outFile("../Data/AuthorTest.txt", ofstream::trunc);
+    outFile << "Ma TG |Ho dem	|Ten  |Noi cong tac|Linh vuc nghien cuu|Trinh do\n";
+    for (int i=0; i<Author_count; i++)
+    {
+        outFile <<  Auth[i].author_id << "|";
+        outFile <<  Auth[i].firstName << "|";
+        outFile <<  Auth[i].lastName << "|";
+        outFile <<  Auth[i].work << "|";
+        outFile <<  Auth[i].field << "|";
+        outFile <<  Auth[i].degree << ",\n";
+
+
+    }
+    outFile.close();
+
+    
+
+
+}
+
+
 /////////////////////////////////////////////////////////////MAIN//////////////////////////////////////////////////////////////
 int main() {
 
@@ -571,9 +595,9 @@ int main() {
     L.get_initialNum(inFileNum);
 
     // Get data Publisher
-    ifstream inFile("../Data/Publisher.txt");
-    if (inFile.fail()) cout << "Failed to open file";
-    L.List_getPublisher(inFile);
+    ifstream inFilePub("../Data/Publisher.txt");
+    if (inFilePub.fail()) cout << "Failed to open file";
+    L.List_getPublisher(inFilePub);
     //L.List_displayPublisher(); 
 
     // Get data Article
@@ -593,7 +617,7 @@ int main() {
     if (inFileAuth.fail()) cout << "Failed to open file";
     L.List_getAuthor(inFileAuth);
     //L.List_displayAuthor();
-
+    
     //L.List_displayAll(); // Hiển thị thông tin đầy đủ của tất cả bài báo
     // L.List_displayNumofArtPerAuth(); // Thống kê số lượng bài báo của tất cả tác giả
     // L.List_displayNumofArtPerJour(); // Thống kê số lượng bài báo của tất cả tạp chí
@@ -607,8 +631,13 @@ int main() {
     // L.List_dislayArtByAuthID(); // Hiển thị các bài báo của 1 tác giả theo ID
     // L.List_displayArtByJourID();// Hiển thị các bài báo của 1 tạp chí theo ID
     //L.List_displayArtByPublID(); // Hiển thị các bài báo của 1 NXB theo ID
-    L.List_displayArtByYear(); // Hiển thị các bài báo của 1 năm
+    // L.List_displayArtByYear(); // Hiển thị các bài báo của 1 năm
+    L.List_overwriteNewAuthor();
 
+    inFileArt.close();
+    inFileJou.close();
+    inFileAuth.close();
+    inFilePub.close();
 
     return 0;
 }

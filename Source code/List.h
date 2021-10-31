@@ -60,6 +60,7 @@ class List {
         bool List_isNewPublisher(string); // Khong can thiet vi neu khong co thi cung chang in ra :)
         friend int getAuthorCountfromList();        //Hàm lấy số lượng author cho mỗi đối tượng lớp author
         void List_AddAuthor(string);
+        void List_overwriteNewAuthor();
 };
 
 
