@@ -1,5 +1,5 @@
 Ma TG |Ho dem	|Ten  |Noi cong tac|Linh vuc nghien cuu|Trinh do
-AU01|Nguyen Ngoc|Chinh|DHNN|Ngon ngu hoc va van hoc|PGS TS,	
+AU01|Nguyen Ngoc|Chinh|DHNN|Ngon ngu hoc va van hoc|PGS TS,
 AU02|Nguyen Thi Quynh|Hoa|DHNN|Ngon ngu Anh va Dich thuat|PGS TS,
 AU03|Luu Quy|Khuong|DHNN|Ngon ngu hoc va van hoc|PGS TS,
 AU04|Dinh Thanh|Viet|DHDN|Ky thuat dien|PGS TS,
