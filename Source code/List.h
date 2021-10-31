@@ -40,6 +40,10 @@ class List {
         void List_displayNumofArtPerJour();                          // Thống kê số lượng bài báo của mỗi tạp chí
         void List_displayNumofArtPerPubl();                          // Thống kê số lượng bài báo của mỗi nhà xuất bản
         void List_displayNumofArtPerYear();                          // Thống kê số lượng bài báo của mỗi năm
+        void List_dislayArtByAuthID();                               // In ra tất cả bài của 1 tác giả theo Author ID
+        void List_displayArtByJourID();                              // In ra tất cả bài của 1 tác giả theo Journal ID
+        void List_displayArtByPublID();                              // In ra tất cả bài của 1 tác giả theo Publiser ID
+        void List_displayArtByYear();                                // In ra tất cả bài của 1 tác giả theo năms
         string List_getAuthorNamebyID(string);
         string List_getJournalNamebyID(string);
         string List_getPublisherIDbyJourID(string);
@@ -52,6 +56,8 @@ class List {
 
         void editArticle_General(Article &);
         bool List_isNewAuthor(string);
+        bool List_isNewJournal(string);
+        bool List_isNewPublisher(string); // Khong can thiet vi neu khong co thi cung chang in ra :)
         friend int getAuthorCountfromList();        //Hàm lấy số lượng author cho mỗi đối tượng lớp author
         void List_AddAuthor(string);
 };

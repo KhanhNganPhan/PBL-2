@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iomanip>
 #include <string.h>
+#include <algorithm>
 #include "Author.h"
 #include "Journal.h"
 #include "Article.h"
@@ -369,6 +370,24 @@ bool List::List_isNewAuthor(string AuthorID)
     }
     return check;
 }
+////////////////////////////////////////////////////////////Check new Journal or not///////////////////////////////////////////
+bool List::List_isNewJournal(string JournalID)
+{
+    for(int i=0;i < Journal_count; i++)
+    {
+        if(this->Jou[i].J_id == JournalID) return false;
+    }
+    return true;
+}
+////////////////////////////////////////////////////////////Check new Publisher or not//////////////////////////////////////////////
+bool List::List_isNewPublisher(string PublisherID)
+{
+    for(int i=0;i < Publisher_count;i++)
+    {
+        if(this->Pub[i].Publisher_id == PublisherID) return false;;
+    }
+    return true;
+}
 /////////////////////////////////////////////////////////////Thêm tác giả//////////////////////////////////////////////////////////////
 void List::List_AddAuthor(string AuthorID)
 {
@@ -456,9 +475,90 @@ void List:: List_displayNumofArtPerPubl()
         cout<<left<<setw(40)<<Pub[i].Publisher_name<<left<<setw(10)<<Pub[i].Article_count<<endl;
     }
 }
+
 void List ::List_displayNumofArtPerYear()
+{    
+}
+void List::List_dislayArtByAuthID()
 {
-    
+    string temp;
+    do
+    {
+        cout<<"Nhap ma tac gia can tim kiem: ";
+        cin>>temp;
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+    }
+    while(this->List_isNewAuthor(temp));
+    cout<<left <<setw(15)<<"Ma bao"<<left <<setw(65)<<"Ten cong bo"<<left <<setw(25)<<"Tac gia"<<left <<setw(45)<<"Tap chi"<<left <<setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i< Article_count;i++)
+    {
+        if(Art[i].Author_id == temp)
+        {
+            cout <<left <<setw(15)<< Art[i].Article_id << left <<setw(65) << Art[i].Article_name <<left <<setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
+        }
+    }
+}
+// Hiển thị bài báo theo ID của tạp chí
+void List::List_displayArtByJourID()
+{
+    string temp;
+    do
+    {
+        cout<<"Nhap ma tap chi can tim kiem: ";
+        cin>>temp;
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+        
+    }
+    while(this->List_isNewJournal(temp));
+    cout<<left <<setw(15)<<"Ma bao"<<left <<setw(65)<<"Ten cong bo"<<left <<setw(25)<<"Tac gia"<<left <<setw(45)<<"Tap chi"<<left <<setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i< Article_count;i++)
+    {
+        if(Art[i].Journal_id == temp)
+        {
+            cout <<left <<setw(15)<< Art[i].Article_id << left <<setw(65) << Art[i].Article_name <<left <<setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
+        }
+    }
+}
+// Hiển thị bài báo theo ID của nhà xuất bản
+void List::List_displayArtByPublID()
+{
+    string temp;
+    do
+    {
+        cout<<"Nhap ma NXB can tim kiem: ";
+        cin>>temp;
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+        
+    }
+    while(this->List_isNewPublisher(temp));
+    cout<<left <<setw(15)<<"Ma bao"<<left <<setw(65)<<"Ten cong bo"<<left <<setw(25)<<"Tac gia"<<left <<setw(45)<<"Tap chi"<<left <<setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i< Article_count;i++)
+    {
+        if(this->List_getPublisherIDbyJourID(Art[i].Journal_id) == temp)
+        {
+            cout <<left <<setw(15)<< Art[i].Article_id << left <<setw(65) << Art[i].Article_name <<left <<setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
+        }
+    }
+}
+// Hiển thị bài báo theo năm
+void List::List_displayArtByYear()
+{
+    string temp;
+    cout<<"Nhap nam can tim kiem: ";
+    cin>> temp;
+    cout<<left <<setw(15)<<"Ma bao"<<left <<setw(65)<<"Ten cong bo"<<left <<setw(25)<<"Tac gia"<<left <<setw(45)<<"Tap chi"<<left <<setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i< Article_count;i++)
+    {
+        if(Art[i].Publish_time == temp)
+        {
+            cout <<left <<setw(15)<< Art[i].Article_id << left <<setw(65) << Art[i].Article_name <<left <<setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left <<setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) <<left <<setw(10)<< Art[i].Publish_time << endl;
+        }
+
+    }
 }
 
 
@@ -494,19 +594,23 @@ int main() {
     L.List_getAuthor(inFileAuth);
     //L.List_displayAuthor();
 
-    //L.List_displayAll();
-    // L.List_displayNumofArtPerAuth();
-    // L.List_displayNumofArtPerJour();
-    //L.List_displayNumofArtPerPubl();
+    //L.List_displayAll(); // Hiển thị thông tin đầy đủ của tất cả bài báo
+    // L.List_displayNumofArtPerAuth(); // Thống kê số lượng bài báo của tất cả tác giả
+    // L.List_displayNumofArtPerJour(); // Thống kê số lượng bài báo của tất cả tạp chí
+    //L.List_displayNumofArtPerPubl();  // Thống kê số lượng bài báo của tất cả NXB
     // L.List_displayAuthor();
     //L.List_displayAll();
 
-    L.List_editArticle();
-    L.List_displayArticle();
-    L.List_displayAuthor();
+    // L.List_editArticle();
+    // L.List_displayArticle();
+    // L.List_displayAuthor();
+    // L.List_dislayArtByAuthID(); // Hiển thị các bài báo của 1 tác giả theo ID
+    // L.List_displayArtByJourID();// Hiển thị các bài báo của 1 tạp chí theo ID
+    //L.List_displayArtByPublID(); // Hiển thị các bài báo của 1 NXB theo ID
+    L.List_displayArtByYear(); // Hiển thị các bài báo của 1 năm
 
 
     return 0;
 }
 ////////// - em Ngân chưa ghi lại DL tác giả mới vào file, chỉ mới edit, add
-///////// 
+/////////  - em Thịnh đã làm display theo từng tiêu chí rùi nha, nếu nhập lower cũng tự upper lên rồi so sánh á

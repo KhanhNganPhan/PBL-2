@@ -1,4 +1,11 @@
+<<<<<<< Updated upstream
 Article		|13
 Author		|23
 Journal		|6
 Publisher	|6
+=======
+Article|13
+Author|23
+Journal|6
+Publisher|6
+>>>>>>> Stashed changes
