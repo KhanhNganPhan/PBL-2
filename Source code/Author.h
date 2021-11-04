@@ -9,12 +9,13 @@ class List;
 class Author
 {
     private:
+        string author_id;   //Mã tác giả
         string firstName;   //Họ và tên đệm
         string lastName;    //Tên
         string work;    //Nơi công tác
         string field;   //Lĩnh vực làm việc
         string degree;  //trình độ
-        string author_id;   //Mã tác giả
+        string cmnd;
         int Article_count =0; //Biến đếm số bài báo của một tác giả
         float ranking;
     public:

@@ -58,9 +58,34 @@ class List {
         bool List_isNewAuthor(string);
         bool List_isNewJournal(string);
         bool List_isNewPublisher(string); // Khong can thiet vi neu khong co thi cung chang in ra :)
+        bool List_isNewArticle(string); //Kiểm tra article mới/cũ
         friend int getAuthorCountfromList();        //Hàm lấy số lượng author cho mỗi đối tượng lớp author
         void List_AddAuthor(string);
         void List_overwriteNewAuthor();
+        void List_overwriteNewArticle();
+        void List_overwriteNewPublisher();
+        void List_overwriteNewJournal();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        void List_addArticle(string);
 };
 
 
