@@ -22,6 +22,9 @@ class Article {
     void editArticle_Author();
     void editArticle_Journal();
     void editArticle_Time();
+    int getPublish_Time();
+    string getArticleName();
+    
 };
 
 

@@ -20,6 +20,7 @@ class List {
     public:
         friend class Article;
         friend class Author;
+        friend class Journal;
         int static Author_count;             //Biến đếm tổng số tác giả
         int static Article_count;            //Biến đếm tổng số bài báo
         int static Journal_count;            //Biến đếm tổng số tạp chí
@@ -44,48 +45,43 @@ class List {
         void List_displayArtByJourID();                              // In ra tất cả bài của 1 tác giả theo Journal ID
         void List_displayArtByPublID();                              // In ra tất cả bài của 1 tác giả theo Publiser ID
         void List_displayArtByYear();                                // In ra tất cả bài của 1 tác giả theo năms
+        void List_displayArtByArtID();                               // Tim kiem bai bao theo Article ID
+        void List_SortArtByNameAuthor();                             // Sắp xếp bài báo theo tên tác giả
+        void List_SortArtByYear(bool (*SS)(Article, Article));       // Sắp xếp bài báo theo theo năm
+        void List_SortArtByNameArticle(bool (*SS)(Article, Article));
         string List_getAuthorNamebyID(string);
+        string List_getAuthorLastNamebyID(string);
         string List_getJournalNamebyID(string);
         string List_getPublisherIDbyJourID(string);
-        
 
+        
+        
        
         void List_editArticle();
-
-       
-
         void editArticle_General(Article &);
+        void List_editAuthor();
+        void editAuthor_General(Author &);
+        void List_editPublisher();
+        void List_editJournal();
+        void editJournal_General(Journal &);
+
+
         bool List_isNewAuthor(string);
         bool List_isNewJournal(string);
         bool List_isNewPublisher(string); // Khong can thiet vi neu khong co thi cung chang in ra :)
         bool List_isNewArticle(string); //Kiểm tra article mới/cũ
         friend int getAuthorCountfromList();        //Hàm lấy số lượng author cho mỗi đối tượng lớp author
         void List_AddAuthor(string);
+        void List_AddArticle(string);
+        void List_AddPublisher(string);
+        void List_AddJournal(string);
+
         void List_overwriteNewAuthor();
         void List_overwriteNewArticle();
         void List_overwriteNewPublisher();
         void List_overwriteNewJournal();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        void List_addArticle(string);
 };
 
 

@@ -20,8 +20,9 @@ class Journal {
     friend ostream &operator << (ostream &, const Journal &);
     string getID();
     string getName();
-
-
+    void editJournal_Name();
+    void editJournal_Editor();
+    void editJournal_Publisher();
 };
 
 

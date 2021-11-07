@@ -19,8 +19,8 @@ class Publisher {
     friend class List;
     void readf_Publisher(ifstream &);
     friend ostream &operator << (ostream &, const Publisher &);
-    friend ostream &operator << (ostream &, const List &);
-
+    friend istream &operator >> (istream &, Publisher &);
+    void editPublisher_Name();
 };
 
 

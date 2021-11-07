@@ -15,8 +15,7 @@ class Author
         string work;    //Nơi công tác
         string field;   //Lĩnh vực làm việc
         string degree;  //trình độ
-        string cmnd;
-        int Article_count =0; //Biến đếm số bài báo của một tác giả
+        int Article_count = 0; //Biến đếm số bài báo của một tác giả
         float ranking;
     public:
     friend class List;
@@ -24,12 +23,15 @@ class Author
     Author(const Author &);
     ~Author();
     void readf_author(ifstream &in);
-    void setAuthorID();
+    string getLastName();
     string getName();
     string getID();
     friend istream &operator >> (istream &, Author &);
     friend ostream &operator << (ostream &, const Author &);
-    friend int getAuthorCountfromList();                        //Hàm friend lấy SL author từ class List
+    void editAuthor_Name();
+    void editAuthor_Work();
+    void editAuthor_Field();
+    void editAuthor_Degree();
 
 };
 
