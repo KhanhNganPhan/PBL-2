@@ -71,15 +71,27 @@ class List {
         bool List_isNewPublisher(string); // Khong can thiet vi neu khong co thi cung chang in ra :)
         bool List_isNewArticle(string); //Kiểm tra article mới/cũ
         friend int getAuthorCountfromList();        //Hàm lấy số lượng author cho mỗi đối tượng lớp author
+
         void List_AddAuthor(string);
         void List_AddArticle(string);
         void List_AddPublisher(string);
         void List_AddJournal(string);
 
+        void List_InsertAuthor(string);
+        void List_InsertArticle(string);
+        void List_InsertPublisher(string);
+        void List_InsertJournal(string);
+
         void List_overwriteNewAuthor();
         void List_overwriteNewArticle();
         void List_overwriteNewPublisher();
         void List_overwriteNewJournal();
+        void List_overwriteInitialNumber();
+
+        void List_FindArticleByName(string);
+
+        void List_DeleteArticleByArtID(string);
+        void List_DeleteArticleByPos(int);
 
 
 };
