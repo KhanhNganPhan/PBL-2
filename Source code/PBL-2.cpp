@@ -1250,13 +1250,257 @@ void List::List_SortArtByNameArticle(bool (*SS)(Article, Article))
 }
 ///////////////////////////////////////////////////////////FIND ARTICLE///////////////////////////////////////////////////////
 void List::List_FindArticleByName(string name)
-{
+{   
+    cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45)<<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
     for (int i=0; i<Article_count; i++)
     {
-        if (Art[i].Article_name.find(name) != string::npos) cout << Art[i];
+        if (Art[i].Article_name.find(name) != string::npos)
+        {
+            cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl; 
+        }
     }
 }
+void MENU(List L)
+{
+    string Tenbaibao;
+    string chon;
+    string Mabaibao;
+    int temp;
+    do
+    {
+        cout<<"1. Hien thi thong tin"<<endl;
+        cout<<"2. Thong ke"<<endl;
+        cout<<"3. Tim kiem"<<endl;
+        cout<<"4. Sap xep"<<endl;
+        cout<<"5. Chinh sua"<<endl;
+        cout<<"6. Chen"<<endl;
+        cout<<"7. Xoa"<<endl;
+        cout<<"0. Thoat"<<endl;
+        cout<<"Vui long nhap lua chon cua ban: ";
+        cin>>temp;
+        switch (temp)
+        {
+        case 0:
+            temp =0;
+            cout<<"Chuc ban mot ngay moi tot lanh"<<endl;
+            break;
+        case 1:
+            int temp1;
+            do
+            {
+            cout<<"1. Hien thi thong tin bai bao"<<endl; 
+            cout<<"2. Hien thi thong tin tac gia"<<endl;
+            cout<<"3. Hien thi thong tin tap chi"<<endl;
+            cout<<"4. Hien thi thong tin nha xuat ban"<<endl;
+            cout<<"0. Thoat"<<endl;
+            cout<<"Vui long nhap lua chon cua ban: ";
+            cin>>temp1;
+            switch (temp1)
+                {
+                case 0:
+                    temp1 =0;
+                    break;
+                case 1:
+                    L.List_displayAll();
+                     break;
+                case 2:
+                    L.List_displayAuthor();
+                    break;
+                case 3:
+                    L.List_displayJournal();
+                    break;
+                case 4:
+                    L.List_displayPublisher();
+                    break;
+                default:
+                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+            } 
+            while(temp1);
+            break;
+        case 2:
+            int temp2;
+            do
+            {
+                cout<<"1.Thong ke so luong bai bao theo tac gia"<<endl;
+                cout<<"2.Thong ke so luong bai bao theo tap chi"<<endl;
+                cout<<"3.Thong ke so luong bai bao theo nha xuat ban"<<endl;
+                cout<<"4.Thong ke so luong bai bao theo nam"<<endl;
+                cout<<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp2;
+                switch (temp2)
+                {
+                case 0:
+                    temp2 = 0;
+                    break;
+                case 1:
+                    L.List_displayNumofArtPerAuth();
+                    break;
+                case 2:
+                    L.List_displayNumofArtPerJour();
+                    break;
+                case 3:
+                    L.List_displayNumofArtPerPubl();
+                    break;
+                case 4:
+                    // chua co
+                    break;
+                
+                default:
+                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+            }
+            while(temp2);
+        break;
+        case 3:
+            int temp3;
+            do
+            {
+                cout<<"1. Tim kiem theo ten bai bao"<<endl;
+                cout<<"2. Tim kiem theo ma bai bao"<<endl;
+                cout<<"3. Tim kiem theo ten tac gia"<<endl;
+                cout<<"4. Tim kiem theo ma tac gia"<<endl;
+                cout<<"5. Tim kiem theo ma tap chi"<<endl;
+                cout<<"6. Tim kiem theo ma NXB"<<endl;
+                cout<<"7. Tim kiem theo nam xuat ban"<<endl;
+                cout<<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp3;
+                switch (temp3)
+                {
+                case 0:
+                    temp3 =0;
+                    break;
+                case 1:
+                cout<<"Nhap ten bai bao can tim kiem: ";
+                cin>>Tenbaibao;
+                L.List_FindArticleByName(Tenbaibao);
+                break;
+                case 2:
+                L.List_displayArtByArtID();
+                break;
+                case 3:
+                // chua co
+                break;
+                case 4:
+                L.List_dislayArtByAuthID();
+                break;
+                case 5:
+                L.List_displayArtByJourID();
+                break;
+                case 6:
+                L.List_displayArtByPublID();
+                break;
+                case 7:
+                L.List_displayArtByYear();
+                break;
+                default:
+                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                break;
+                }       
+                
+            } while (temp3);
+        break;
+        case 4:
+            int temp4;
+            do
+            {
+                cout<<"1. Sap xep theo tac gia"<<endl;
+                cout<<"2. Sap xep theo ten bai bao"<<endl;
+                cout<<"3. Sap xep theo nam"<<endl;
+                cout<<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp4;
+                switch (temp4)
+                {
+                case 0:
+                    temp4 =0;
+                    break;
+                case 1:
+                    L.List_SortArtByNameAuthor();
+                    break;
+                case 2:
+                    cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
+                    cin>>chon;
+                    transform(chon.begin(), chon.end(), chon.begin(), ::toupper);
+                    if(chon == "T")
+                    {
+                        L.List_SortArtByNameArticle(ArtNameAscending);
+                    }
+                    else if (chon == "G") 
+                    {
+                        L.List_SortArtByNameArticle(ArtNameDescending);
+                    }
+                    break;
+                case 3:
+                    cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
+                    cin>>chon;
+                    transform(chon.begin(), chon.end(), chon.begin(), ::toupper);
+                    if(chon == "T")
+                    {
+                        L.List_SortArtByYear(YearAscending);
+                    }
+                    else if(chon == "G" ) 
+                    {
+                        L.List_SortArtByYear(YearDescending);
+                    }
+                    break;
 
+                default:
+                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+                
+            } 
+            while (temp4);
+        break;
+        case 5: 
+        // Ngan them ik thin ko lam phan edit voi phan add 
+        break;
+        case 6:
+        // Van la dong` do' nhung kem` theo IU NGAN NHIUUUU
+        break;
+        case 7:
+        int temp7;
+        do
+        {
+            cout<<"1.Xoa bai bao theo ma bai bao"<<endl;
+            cout<<"2.Xoa bai bao theo vi tri bai bao"<<endl;
+            cout<<"0. Thoat"<<endl;
+            cout<<"Vui long nhap lua chon cua ban: ";
+            cin>>temp7;
+            switch (temp7)
+            {
+            case 0:
+                temp7 =0;
+                break;
+            case 1:
+                cout<<"Nhap ma bai bao can xoa: ";
+                cin>>Mabaibao;
+                L.List_DeleteArticleByArtID(Mabaibao);
+                break;
+            case 2:
+                // chua co
+                break;
+            
+            default:
+                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                break;
+            }
+        } while (temp7);
+        break;
+
+        default:
+            cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+            break;
+        }
+    } while (temp);
+    
+}
 
 /////////////////////////////////////////////////////////////MAIN//////////////////////////////////////////////////////////////
 int main() 
@@ -1301,6 +1545,7 @@ int main()
     // L.List_displayArtByJourID();// Hiển thị các bài báo của 1 tạp chí theo ID
     //L.List_displayArtByPublID(); // Hiển thị các bài báo của 1 NXB theo ID
     // L.List_displayArtByYear(); // Hiển thị các bài báo của 1 năm
+    MENU(L);
    
     inFileArt.close();
     inFileJou.close();
