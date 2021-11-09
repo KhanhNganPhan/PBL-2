@@ -1266,9 +1266,13 @@ void MENU(List L)
     string Tenbaibao;
     string chon;
     string Mabaibao;
+    string Matacgia;
+    string Matapchi;
+    string MaNXB;
     int temp;
     do
     {
+        cout<<"===== QUAN LY CAC BAI BAO KHOA HOC ====="<<endl;
         cout<<"1. Hien thi thong tin"<<endl;
         cout<<"2. Thong ke"<<endl;
         cout<<"3. Tim kiem"<<endl;
@@ -1283,7 +1287,7 @@ void MENU(List L)
         {
         case 0:
             temp =0;
-            cout<<"Chuc ban mot ngay moi tot lanh"<<endl;
+            cout<<"Chuc ban mot ngay moi tot lanh!"<<endl;
             break;
         case 1:
             int temp1;
@@ -1377,7 +1381,8 @@ void MENU(List L)
                     break;
                 case 1:
                 cout<<"Nhap ten bai bao can tim kiem: ";
-                cin>>Tenbaibao;
+                getenter;
+                getline(cin,Tenbaibao);
                 L.List_FindArticleByName(Tenbaibao);
                 break;
                 case 2:
@@ -1459,40 +1464,132 @@ void MENU(List L)
             while (temp4);
         break;
         case 5: 
-        // Ngan them ik thin ko lam phan edit voi phan add 
-        break;
-        case 6:
-        // Van la dong` do' nhung kem` theo IU NGAN NHIUUUU
-        break;
-        case 7:
-        int temp7;
-        do
-        {
-            cout<<"1.Xoa bai bao theo ma bai bao"<<endl;
-            cout<<"2.Xoa bai bao theo vi tri bai bao"<<endl;
-            cout<<"0. Thoat"<<endl;
-            cout<<"Vui long nhap lua chon cua ban: ";
-            cin>>temp7;
-            switch (temp7)
+            int temp5;
+            do
             {
-            case 0:
-                temp7 =0;
-                break;
-            case 1:
-                cout<<"Nhap ma bai bao can xoa: ";
-                cin>>Mabaibao;
-                L.List_DeleteArticleByArtID(Mabaibao);
-                break;
-            case 2:
-                // chua co
-                break;
-            
-            default:
-                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
-                break;
-            }
-        } while (temp7);
-        break;
+                cout<<"1. Chinh sua thong tin bai bao"<<endl;
+                cout<<"2. Chinh sua thong tin tac gia"<<endl;
+                cout<<"3. Chinh sua thong tin tap chi"<<endl;
+                cout<<"4. Chinh sua thong tin NXB"<<endl;
+                cout <<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp5;
+                switch (temp5)
+                {
+                case 0:
+                    temp5 =0;
+                    break;
+                case 1:
+                    L.List_editArticle();
+                    break;
+                case 2:
+                    L.List_editAuthor();
+                    break;
+                case 3:
+                    L.List_editJournal();
+                    break;
+                case 4:
+                    L.List_editPublisher();
+                    break;
+                default:
+                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+            } while (temp5);
+            break;
+        case 6:
+            int temp6;
+            do
+            {
+                cout<<"1. Them bai bao"<<endl;
+                cout<<"2. Them tac gia"<<endl;
+                cout<<"3. Them tap chi"<<endl;
+                cout<<"4. Them NXB"<<endl;
+                cout <<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp6;
+                switch (temp6)
+                {
+                case 0:
+                    temp6 =0;
+                    break;
+                case 1:
+                    int case1;
+                    do 
+                    {
+                        cout << "1. Them vao mac dinh"<<endl;
+                        cout << "2. Them vao vi tri bat ki"<<endl;
+                        cout << "0: Quay tro lai"<<endl;
+                        cout <<"Vui long nhap lua chon cua ban: ";
+                        cin >> case1;
+                        switch (case1)
+                        {
+                            case 1:
+                                cout << "Nhap ma bai bao: ";
+                                cin >> Mabaibao;
+                                L.List_AddArticle(Mabaibao);
+                                break;
+                            case 2:
+                                cout << "Nhap ma bai bao: ";
+                                cin >> Mabaibao;
+                                L.List_InsertArticle(Mabaibao);
+                                break;
+                            case 0:
+                                case1 = 0;
+                                break;
+                        }
+                    } while(case1);
+                    break;
+                case 2:
+                    cout << "Nhap ma tac gia: ";
+                    cin >> Matacgia;
+                    L.List_AddAuthor(Matacgia);
+                    break;
+                case 3:
+                    cout << "Nhap ma tap chi: ";
+                    cin >> Matapchi;
+                    L.List_AddJournal(Matapchi);
+                    break;
+                case 4:
+                    cout << "Nhap ma NXB: ";
+                    cin >> MaNXB;
+                    L.List_AddPublisher(MaNXB);
+                    break;
+                default:
+                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+            } while (temp6);
+            break;
+        case 7:
+            int temp7;
+            do
+            {
+                cout<<"1.Xoa bai bao theo ma bai bao"<<endl;
+                cout<<"2.Xoa bai bao theo vi tri bai bao"<<endl;
+                cout<<"0. Thoat"<<endl;
+                cout<<"Vui long nhap lua chon cua ban: ";
+                cin>>temp7;
+                switch (temp7)
+                {
+                case 0:
+                    temp7 =0;
+                    break;
+                case 1:
+                    cout<<"Nhap ma bai bao can xoa: ";
+                    cin>>Mabaibao;
+                    L.List_DeleteArticleByArtID(Mabaibao);
+                    break;
+                case 2:
+                    // chua co
+                    break;
+                
+                default:
+                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    break;
+                }
+            } while (temp7);
+            break;
 
         default:
             cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
