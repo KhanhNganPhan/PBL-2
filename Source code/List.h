@@ -89,6 +89,7 @@ class List {
         void List_overwriteInitialNumber();
 
         void List_FindArticleByName(string);
+        void List_FindArticleByAuthorName();        
 
         void List_DeleteArticleByArtID(string);
         void List_DeleteArticleByPos(int);

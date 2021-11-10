@@ -1251,15 +1251,36 @@ void List::List_SortArtByNameArticle(bool (*SS)(Article, Article))
 ///////////////////////////////////////////////////////////FIND ARTICLE///////////////////////////////////////////////////////
 void List::List_FindArticleByName(string name)
 {   
+    transform(name.begin(), name.end(), name.begin(), ::toupper);
     cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45)<<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
     for (int i=0; i<Article_count; i++)
     {
-        if (Art[i].Article_name.find(name) != string::npos)
+        string temp = Art[i].Article_name;
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+        if (temp.find(name) != string::npos)
         {
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
             cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl; 
         }
     }
+}
+void List::List_FindArticleByAuthorName()
+{
+    cout<<"Nhap ten tac gia can tim kiem: ";
+    string Ten;
+    cin>>Ten;
+    transform(Ten.begin(), Ten.end(),Ten.begin(), ::toupper);
+    cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45)<<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+    for(int i=0;i<Article_count;i++)
+    {
+        string temp = this->List_getAuthorNamebyID(Art[i].Author_id);
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+        if(temp.find(Ten) != string::npos)
+        {
+            cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
+            cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl;
+        }
+    }    
 }
 void MENU(List L)
 {
@@ -1389,7 +1410,7 @@ void MENU(List L)
                 L.List_displayArtByArtID();
                 break;
                 case 3:
-                // chua co
+                L.List_FindArticleByAuthorName();
                 break;
                 case 4:
                 L.List_dislayArtByAuthID();
