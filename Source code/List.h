@@ -93,6 +93,11 @@ class List {
 
         void List_DeleteArticleByArtID(string);
         void List_DeleteArticleByPos(int);
+        void List_DeleteAuthorByAuthID(string);
+        void List_DeleteJournalByJouID(string);
+        void List_DeletePublisherByPubID(string);
+
+        void List_UpdateNumArtOfAllList(); //Hàm update số lượng bài báo của List Author, Journal, Publisher
 
 
 };
