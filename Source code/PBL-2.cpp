@@ -1478,6 +1478,7 @@ void MENU(List L)
             break;
         case 1:
             int temp1;
+            system("cls");
             do
             {
             cout<<"1. Hien thi thong tin bai bao"<<endl; 
@@ -1491,21 +1492,32 @@ void MENU(List L)
                 {
                 case 0:
                     temp1 =0;
+                    system("cls");
                     break;
                 case 1:
                     L.List_displayAll();
-                     break;
+                    system("pause");
+                    system("cls");
+                    break;
                 case 2:
                     L.List_displayAuthor();
+                    system("pause");
+                    system("cls");
                     break;
                 case 3:
                     L.List_displayJournal();
+                    system("pause");
+                    system("cls");
                     break;
                 case 4:
                     L.List_displayPublisher();
+                    system("pause");
+                    system("cls");
                     break;
                 default:
-                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
             } 
@@ -1513,6 +1525,7 @@ void MENU(List L)
             break;
         case 2:
             int temp2;
+            system("cls");
             do
             {
                 cout<<"1.Thong ke so luong bai bao theo tac gia"<<endl;
@@ -1526,28 +1539,41 @@ void MENU(List L)
                 {
                 case 0:
                     temp2 = 0;
+                    system("cls");
                     break;
                 case 1:
                     L.List_displayNumofArtPerAuth();
+                    system("pause");
+                    system("cls");
                     break;
                 case 2:
                     L.List_displayNumofArtPerJour();
+                    system("pause");
+                    system("cls");
                     break;
                 case 3:
                     L.List_displayNumofArtPerPubl();
+                    system("pause");
+                    system("cls");
                     break;
                 case 4:
                     // chua co
+                    system("pause");
+                    system("cls");
                     break;
                 
                 default:
-                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
             }
             while(temp2);
         break;
         case 3:
+        
+            system("cls");
             int temp3;
             do
             {
@@ -1565,39 +1591,56 @@ void MENU(List L)
                 {
                 case 0:
                     temp3 =0;
+                    system("cls");
                     break;
                 case 1:
                 cout<<"Nhap ten bai bao can tim kiem: ";
                 getenter;
                 getline(cin,Tenbaibao);
                 L.List_FindArticleByName(Tenbaibao);
+                system("pause");
+                system("cls");
                 break;
                 case 2:
                 L.List_displayArtByArtID();
+                system("pause");
+                system("cls");
                 break;
                 case 3:
                 L.List_FindArticleByAuthorName();
+                system("pause");
+                system("cls");
                 break;
                 case 4:
                 L.List_dislayArtByAuthID();
+                system("pause");
+                system("cls");
                 break;
                 case 5:
                 L.List_displayArtByJourID();
+                system("pause");
+                system("cls");
                 break;
                 case 6:
                 L.List_displayArtByPublID();
+                system("pause");
+                system("cls");
                 break;
                 case 7:
                 L.List_displayArtByYear();
+                system("pause");
+                system("cls");
                 break;
                 default:
-                cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                cout<<"Ban da nhap sai!!!"<<endl;
+                system("cls");
                 break;
                 }       
                 
             } while (temp3);
         break;
         case 4:
+            system("cls");
             int temp4;
             do
             {
@@ -1611,9 +1654,12 @@ void MENU(List L)
                 {
                 case 0:
                     temp4 =0;
+                    system("cls");
                     break;
                 case 1:
                     L.List_SortArtByNameAuthor();
+                    system("pause");
+                    system("cls");
                     break;
                 case 2:
                     cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
@@ -1627,6 +1673,8 @@ void MENU(List L)
                     {
                         L.List_SortArtByNameArticle(ArtNameDescending);
                     }
+                    system("pause");
+                    system("cls");
                     break;
                 case 3:
                     cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
@@ -1640,10 +1688,14 @@ void MENU(List L)
                     {
                         L.List_SortArtByYear(YearDescending);
                     }
+                    system("pause");
+                    system("cls");
                     break;
 
                 default:
-                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
                 
@@ -1651,6 +1703,7 @@ void MENU(List L)
             while (temp4);
         break;
         case 5: 
+            system("cls");
             int temp5;
             do
             {
@@ -1664,31 +1717,43 @@ void MENU(List L)
                 switch (temp5)
                 {
                 case 0:
-                    temp5 =0;
+                    temp5 =0; 
+                    system("cls");
                     break;
                 case 1:
                     L.List_editArticle();
                     //L.List_overwriteNewArticle();
+                    system("pause");
+                    system("cls");
                     break;
                 case 2:
                     L.List_editAuthor();
                     //L.List_overwriteNewAuthor();
+                    system("pause");
+                    system("cls");
                     break;
                 case 3:
                     L.List_editJournal();
                     //L.List_overwriteNewJournal();
+                    system("pause");
+                    system("cls");
                     break;
                 case 4:
                     L.List_editPublisher();
                     //L.List_overwriteNewPublisher();
+                    system("pause");
+                    system("cls");
                     break;
                 default:
-                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
             } while (temp5);
             break;
         case 6:
+            system("cls");
             int temp6;
             do
             {
@@ -1703,6 +1768,7 @@ void MENU(List L)
                 {
                 case 0:
                     temp6 =0;
+                    system("cls");
                     break;
                 case 1:
                     int case1;
@@ -1710,7 +1776,7 @@ void MENU(List L)
                     {
                         cout << "1. Them vao mac dinh"<<endl;
                         cout << "2. Them vao vi tri bat ki"<<endl;
-                        cout << "0: Quay tro lai"<<endl;
+                        cout << "0: Thoat"<<endl;
                         cout <<"Vui long nhap lua chon cua ban: ";
                         cin >> case1;
                         switch (case1)
@@ -1720,41 +1786,58 @@ void MENU(List L)
                                 cin >> Mabaibao;
                                 L.List_AddArticle(Mabaibao);
                                 L.List_UpdateNumArtOfAllList();
+                                system("pause");
+                                system("cls");
                                 break;
                             case 2:
                                 cout << "Nhap ma bai bao: ";
                                 cin >> Mabaibao;
                                 L.List_InsertArticle(Mabaibao);
                                 L.List_UpdateNumArtOfAllList();
+                                system("pause");
+                                system("cls");
                                 break;
                             case 0:
                                 case1 = 0;
+                                system("pause");
+                                system("cls");
                                 break;
                         }
                     } while(case1);
+                    system("pause");
+                    system("cls");
                     break;
                 case 2:
                     cout << "Nhap ma tac gia: ";
                     cin >> Matacgia;
                     L.List_AddAuthor(Matacgia);
+                    system("pause");
+                    system("cls");
                     break;
                 case 3:
                     cout << "Nhap ma tap chi: ";
                     cin >> Matapchi;
                     L.List_AddJournal(Matapchi);
+                    system("pause");
+                    system("cls");
                     break;
                 case 4:
                     cout << "Nhap ma NXB: ";
                     cin >> MaNXB;
                     L.List_AddPublisher(MaNXB);
+                    system("pause");
+                    system("cls");
                     break;
                 default:
-                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
             } while (temp6);
             break;
         case 7:
+            system("cls");
             int temp7;
             do
             {
@@ -1770,12 +1853,15 @@ void MENU(List L)
                 {
                 case 0:
                     temp7 =0;
+                    system("cls");
                     break;
                 case 1:
                     cout<<"Nhap ma bai bao can xoa: ";
                     cin>>Mabaibao;
                     L.List_DeleteArticleByArtID(Mabaibao);
                     L.List_UpdateNumArtOfAllList();
+                    system("pause");
+                    system("cls");
                     break;
                 case 2:
                     // chua co
@@ -1784,19 +1870,27 @@ void MENU(List L)
                     cout <<"Nhap ma tac gia can xoa: ";
                     cin >>Matacgia;
                     L.List_DeleteAuthorByAuthID(Matacgia);
+                    system("pause");
+                    system("cls");
                     break;
                 case 4:
                     cout <<"Nhap ma tap chi can xoa: ";
                     cin >>Matapchi;
                     L.List_DeleteJournalByJouID(Matacgia);
+                    system("pause");
+                    system("cls");
                     break;
                 case 5:
                     cout <<"Nhap ma NXB can xoa: ";
                     cin >>MaNXB;
                     L.List_DeletePublisherByPubID(Matacgia);
+                    system("pause");
+                    system("cls");
                     break;
                 default:
-                    cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+                    cout<<"Ban da nhap sai!!!"<<endl;
+                    system("pause");
+                    system("cls");
                     break;
                 }
             } while (temp7);
