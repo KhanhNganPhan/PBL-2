@@ -41,11 +41,15 @@ class List {
         void List_displayNumofArtPerJour();                          // Thống kê số lượng bài báo của mỗi tạp chí
         void List_displayNumofArtPerPubl();                          // Thống kê số lượng bài báo của mỗi nhà xuất bản
         void List_displayNumofArtPerYear();                          // Thống kê số lượng bài báo của mỗi năm
-        void List_dislayArtByAuthID();                               // In ra tất cả bài của 1 tác giả theo Author ID
-        void List_displayArtByJourID();                              // In ra tất cả bài của 1 tác giả theo Journal ID
-        void List_displayArtByPublID();                              // In ra tất cả bài của 1 tác giả theo Publiser ID
-        void List_displayArtByYear();                                // In ra tất cả bài của 1 tác giả theo năms
-        void List_displayArtByArtID();                               // Tim kiem bai bao theo Article ID
+        
+        bool List_FindArtByAuthID();                               // Tìm kiếm bài của 1 tác giả theo Author ID
+        bool List_FindArtByJourID();                              // Tìm kiếm bài của 1 tác giả theo Journal ID
+        bool List_FindArtByPublID();                              // Tìm kiếm bài của 1 tác giả theo Publiser ID
+        bool List_FindArtByYear();                                // Tìm kiếm bài của 1 tác giả theo năms
+        bool List_FindArtByArtID();                               // Tim kiem bai bao theo Article ID
+        bool List_FindArticleByName(string);                        //Tìm kiếm bài báo theo tên
+        bool List_FindArticleByAuthorName();                        //Tìm kiếm bài báo theo tên tác giả
+        
         void List_SortArtByNameAuthor();                             // Sắp xếp bài báo theo tên tác giả
         void List_SortArtByYear(bool (*SS)(Article, Article));       // Sắp xếp bài báo theo theo năm
         void List_SortArtByNameArticle(bool (*SS)(Article, Article));
@@ -88,8 +92,7 @@ class List {
         void List_overwriteNewJournal();
         void List_overwriteInitialNumber();
 
-        void List_FindArticleByName(string);
-        void List_FindArticleByAuthorName();        
+        
 
         void List_DeleteArticleByArtID(string);
         void List_DeleteArticleByPos(int);
