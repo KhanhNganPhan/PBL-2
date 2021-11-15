@@ -1592,10 +1592,11 @@ void MENU(List L)
             system("cls");
             do
             {
-            cout<<"1. Hien thi thong tin bai bao"<<endl; 
-            cout<<"2. Hien thi thong tin tac gia"<<endl;
-            cout<<"3. Hien thi thong tin tap chi"<<endl;
-            cout<<"4. Hien thi thong tin nha xuat ban"<<endl;
+            cout<<"==== HIEN THI THONG TIN ===="<<endl<<endl;
+            cout<<"1. Theo bai bao"<<endl; 
+            cout<<"2. Theo tac gia"<<endl;
+            cout<<"3. Theo tap chi"<<endl;
+            cout<<"4. Theo nha xuat ban"<<endl;
             cout<<"0. Thoat"<<endl;
             cout<<"Vui long nhap lua chon cua ban: ";
             cin>>temp1;
@@ -1609,11 +1610,13 @@ void MENU(List L)
                     L.List_displayAll();
                     system("pause");
                     system("cls");
+                    temp1 =0;
                     break;
                 case 2:
                     L.List_displayAuthor();
                     system("pause");
                     system("cls");
+                    temp1 =0;
                     break;
                 case 3:
                     L.List_displayJournal();
@@ -1624,6 +1627,7 @@ void MENU(List L)
                     L.List_displayPublisher();
                     system("pause");
                     system("cls");
+                    temp1 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
@@ -1639,10 +1643,11 @@ void MENU(List L)
             system("cls");
             do
             {
-                cout<<"1.Thong ke so luong bai bao theo tac gia"<<endl;
-                cout<<"2.Thong ke so luong bai bao theo tap chi"<<endl;
-                cout<<"3.Thong ke so luong bai bao theo nha xuat ban"<<endl;
-                cout<<"4.Thong ke so luong bai bao theo nam"<<endl;
+                cout<<"==== THONG KE ===="<<endl<<endl;
+                cout<<"1. So luong bai bao theo tac gia"<<endl;
+                cout<<"2. So luong bai bao theo tap chi"<<endl;
+                cout<<"3. So luong bai bao theo nha xuat ban"<<endl;
+                cout<<"4. So luong bai bao theo nam"<<endl;
                 cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp2;
@@ -1656,21 +1661,25 @@ void MENU(List L)
                     L.List_displayNumofArtPerAuth();
                     system("pause");
                     system("cls");
+                    temp2 = 0;
                     break;
                 case 2:
                     L.List_displayNumofArtPerJour();
                     system("pause");
                     system("cls");
+                    temp2 = 0;
                     break;
                 case 3:
                     L.List_displayNumofArtPerPubl();
                     system("pause");
                     system("cls");
+                    temp2 = 0;
                     break;
                 case 4:
                     // chua co
                     system("pause");
                     system("cls");
+                    temp2 = 0;
                     break;
                 
                 default:
@@ -1688,13 +1697,14 @@ void MENU(List L)
             int temp3;
             do
             {
-                cout<<"1. Tim kiem theo ten bai bao"<<endl;
-                cout<<"2. Tim kiem theo ma bai bao"<<endl;
-                cout<<"3. Tim kiem theo ten tac gia"<<endl;
-                cout<<"4. Tim kiem theo ma tac gia"<<endl;
-                cout<<"5. Tim kiem theo ma tap chi"<<endl;
-                cout<<"6. Tim kiem theo ma NXB"<<endl;
-                cout<<"7. Tim kiem theo nam xuat ban"<<endl;
+                cout<<"==== TIM KIEM ===="<<endl<<endl;
+                cout<<"1. Theo ten bai bao"<<endl;
+                cout<<"2. Theo ma bai bao"<<endl;
+                cout<<"3. Theo ten tac gia"<<endl;
+                cout<<"4. Theo ma tac gia"<<endl;
+                cout<<"5. Theo ma tap chi"<<endl;
+                cout<<"6. Theo ma NXB"<<endl;
+                cout<<"7. Theo nam xuat ban"<<endl;
                 cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp3;
@@ -1712,36 +1722,43 @@ void MENU(List L)
                 if(L.List_FindArticleByName(Tenbaibao)==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 2:
                 if(L.List_FindArtByArtID()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 3:
                 if(L.List_FindArticleByAuthorName()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 4:
                 if(L.List_FindArtByAuthID()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 5:
                 if(L.List_FindArtByJourID()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 6:
                 if(L.List_FindArtByPublID()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 case 7:
                 if(L.List_FindArtByYear()==false) cout << "Khong tim thay bai bao!"<<endl;
                 system("pause");
                 system("cls");
+                temp3 =0;
                 break;
                 default:
                 cout<<"Ban da nhap sai!!!"<<endl;
@@ -1755,10 +1772,11 @@ void MENU(List L)
             system("cls");
             int temp4;
             do
-            {
-                cout<<"1. Sap xep theo tac gia"<<endl;
-                cout<<"2. Sap xep theo ten bai bao"<<endl;
-                cout<<"3. Sap xep theo nam"<<endl;
+            {   
+                cout<<"==== SAP XEP ===="<<endl<<endl;
+                cout<<"1. Theo tac gia"<<endl;
+                cout<<"2. Theo ten bai bao"<<endl;
+                cout<<"3. Theo nam"<<endl;
                 cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp4;
@@ -1772,6 +1790,7 @@ void MENU(List L)
                     L.List_SortArtByNameAuthor();
                     system("pause");
                     system("cls");
+                    temp4 =0;
                     break;
                 case 2:
                     cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
@@ -1787,6 +1806,7 @@ void MENU(List L)
                     }
                     system("pause");
                     system("cls");
+                    temp4 =0;
                     break;
                 case 3:
                     cout<<"Ban muon sap xep tang dan hay giam dan?(T/G): ";
@@ -1802,6 +1822,7 @@ void MENU(List L)
                     }
                     system("pause");
                     system("cls");
+                    temp4 =0;
                     break;
 
                 default:
@@ -1819,10 +1840,11 @@ void MENU(List L)
             int temp5;
             do
             {
-                cout<<"1. Chinh sua thong tin bai bao"<<endl;
-                cout<<"2. Chinh sua thong tin tac gia"<<endl;
-                cout<<"3. Chinh sua thong tin tap chi"<<endl;
-                cout<<"4. Chinh sua thong tin NXB"<<endl;
+                cout<<"==== CHINH SUA THONG TIN ===="<<endl<<endl;
+                cout<<"1. Bai bao"<<endl;
+                cout<<"2. Tac gia"<<endl;
+                cout<<"3. Tap chi"<<endl;
+                cout<<"4. Nha xuat ban"<<endl;
                 cout <<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp5;
@@ -1837,24 +1859,28 @@ void MENU(List L)
                     //L.List_overwriteNewArticle();
                     system("pause");
                     system("cls");
+                    temp5 =0;
                     break;
                 case 2:
                     L.List_editAuthor();
                     //L.List_overwriteNewAuthor();
                     system("pause");
                     system("cls");
+                    temp5 =0;
                     break;
                 case 3:
                     L.List_editJournal();
                     //L.List_overwriteNewJournal();
                     system("pause");
                     system("cls");
+                    temp5 =0;
                     break;
                 case 4:
                     L.List_editPublisher();
                     //L.List_overwriteNewPublisher();
                     system("pause");
                     system("cls");
+                    temp5 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
@@ -1869,11 +1895,12 @@ void MENU(List L)
             int temp6;
             do
             {
-                cout<<"1. Them bai bao"<<endl;
-                cout<<"2. Them tac gia"<<endl;
-                cout<<"3. Them tap chi"<<endl;
-                cout<<"4. Them NXB"<<endl;
-                cout <<"0. Thoat"<<endl;
+                cout<<"==== THEM ===="<<endl<<endl;
+                cout<<"1. Bai bao"<<endl;
+                cout<<"2. Tac gia"<<endl;
+                cout<<"3. Tap chi"<<endl;
+                cout<<"4. Nha xuat ban"<<endl;
+                cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp6;
                 switch (temp6)
@@ -1883,12 +1910,14 @@ void MENU(List L)
                     system("cls");
                     break;
                 case 1:
+                    system("cls");
                     int case1;
                     do 
-                    {
-                        cout << "1. Them vao mac dinh"<<endl;
-                        cout << "2. Them vao vi tri bat ki"<<endl;
-                        cout << "0: Thoat"<<endl;
+                    {   
+                        cout<<"==== THEM BAI BAO ===="<<endl<<endl;
+                        cout << "1. Mac dinh"<<endl;
+                        cout << "2. Vi tri bat ki"<<endl;
+                        cout << "0. Thoat"<<endl;
                         cout <<"Vui long nhap lua chon cua ban: ";
                         cin >> case1;
                         switch (case1)
@@ -1901,6 +1930,7 @@ void MENU(List L)
                                 //L.List_UpdateNumArtOfAllList();
                                 system("pause");
                                 system("cls");
+                                case1 = 0;
                                 break;
                             case 2:
                                 cout << "Nhap ma bai bao: ";
@@ -1910,6 +1940,7 @@ void MENU(List L)
                                 //L.List_UpdateNumArtOfAllList();
                                 system("pause");
                                 system("cls");
+                                case1 = 0;
                                 break;
                             case 0:
                                 case1 = 0;
@@ -1918,8 +1949,8 @@ void MENU(List L)
                                 break;
                         }
                     } while(case1);
-                    system("pause");
                     system("cls");
+                    temp6 =0;
                     break;
                 case 2:
                     cout << "Nhap ma tac gia: ";
@@ -1928,6 +1959,7 @@ void MENU(List L)
                     L.List_AddAuthor(Matacgia);
                     system("pause");
                     system("cls");
+                    temp6 =0;
                     break;
                 case 3:
                     cout << "Nhap ma tap chi: ";
@@ -1936,6 +1968,7 @@ void MENU(List L)
                     L.List_AddJournal(Matapchi);
                     system("pause");
                     system("cls");
+                    temp6 =0;
                     break;
                 case 4:
                     cout << "Nhap ma NXB: ";
@@ -1944,6 +1977,7 @@ void MENU(List L)
                     L.List_AddPublisher(MaNXB);
                     system("pause");
                     system("cls");
+                    temp6 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
@@ -1958,11 +1992,12 @@ void MENU(List L)
             int temp7;
             do
             {
-                cout<<"1.Xoa bai bao theo ma bai bao"<<endl;
-                cout<<"2.Xoa bai bao theo vi tri bai bao"<<endl;
-                cout<<"3.Xoa tac gia theo ma tac gia"<<endl;
-                cout<<"4.Xoa tap chi theo ma tap chi"<<endl;
-                cout<<"5.Xoa NXB theo ma NXB"<<endl;
+                cout<<"==== XOA ===="<<endl<<endl;
+                cout<<"1.Theo ma bai bao"<<endl;
+                cout<<"2.Theo vi tri bai bao"<<endl;
+                cout<<"3.Theo ma tac gia"<<endl;
+                cout<<"4.Theo ma tap chi"<<endl;
+                cout<<"5.Theo ma NXB"<<endl;
                 cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp7;
@@ -1980,6 +2015,7 @@ void MENU(List L)
                     //L.List_UpdateNumArtOfAllList();
                     system("pause");
                     system("cls");
+                    temp7 =0;
                     break;
                 case 2:
                     cout << "Nhap vi tri bai bao can xoa: ";
@@ -1987,6 +2023,7 @@ void MENU(List L)
                     L.List_DeleteArticleByPos(pos-1);
                     system("pause");
                     system("cls");
+                    temp7 =0;
                     break;
                 case 3:
                     cout <<"Nhap ma tac gia can xoa: ";
@@ -1995,6 +2032,7 @@ void MENU(List L)
                     L.List_DeleteAuthorByAuthID(Matacgia);
                     system("pause");
                     system("cls");
+                    temp7 =0;
                     break;
                 case 4:
                     cout <<"Nhap ma tap chi can xoa: ";
@@ -2003,6 +2041,7 @@ void MENU(List L)
                     L.List_DeleteJournalByJouID(Matacgia);
                     system("pause");
                     system("cls");
+                    temp7 =0;
                     break;
                 case 5:
                     cout <<"Nhap ma NXB can xoa: ";
@@ -2011,6 +2050,7 @@ void MENU(List L)
                     L.List_DeletePublisherByPubID(Matacgia);
                     system("pause");
                     system("cls");
+                    temp7 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
@@ -2022,7 +2062,9 @@ void MENU(List L)
             break;
 
         default:
-            cout<<"Ban da nhap sai. Vui long nhap lai!!!"<<endl;
+            cout<<"Ban da nhap sai!!!"<<endl;
+            system("pause");
+            system("cls");
             break;
         }
     } while (temp);
