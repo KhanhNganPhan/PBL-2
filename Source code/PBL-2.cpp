@@ -469,26 +469,19 @@ string List ::List_getJournalNamebyID(string Journal_ID)
 //////////////////MENU EDIT ARTICLE PROCESS//////////////////////////////////
 void List :: List_editArticle() 
 {
-    char con = 'C'; //biến kiểm tra có tiếp tục công việc sửa thông tin bài báo (c/k)
     int i = 0; //Biến lấy phần tử bài báo trong list
-    while (con == 'C')
+    string ArtID;
+    cout << "Nhap ma bai bao can sua thong tin: ";
+    cin >> ArtID;
+    transform(ArtID.begin(), ArtID.end(), ArtID.begin(), ::toupper);
+    if (List_isNewArticle(ArtID)) cout << "Nhap sai ma bai bao!" << endl;
+    else 
     {
-        string ArtID;
-        cout << "Nhap ma bai bao can sua thong tin: ";
-        cin >> ArtID;
-        transform(ArtID.begin(), ArtID.end(), ArtID.begin(), ::toupper);
-        if (List_isNewArticle(ArtID)) cout << "Nhap sai ma bai bao!" << endl;
-        else 
+        for (i=0; i<Article_count; i++)
         {
-            for (i=0; i<Article_count; i++)
-            {
-                if (Art[i].Article_id == ArtID) break;
-            }
-            editArticle_General(Art[i]);
+            if (Art[i].Article_id == ArtID) break;
         }
-        cout << "Ban co muon tiep tuc khong? (c/k) ";
-        cin >> con;
-        con = toupper(con);
+        editArticle_General(Art[i]);
     }
 }
 
@@ -496,8 +489,9 @@ void List :: List_editArticle()
 /////////////////////////////EDIT ARTICLE GENERAL//////////////////////////////
 void List :: editArticle_General(Article &Art) 
 {
-    cout << "1. Chinh sua ten bai bao" << endl << "2. Chinh sua tac gia" << endl;
-    cout << "3. Chinh sua tap chi" << endl << "4. Chinh sua thoi gian cong bo" << endl << "5: Thoat" << endl;
+    cout << endl << "=== CHINH SUA BAI BAO : " << Art.Article_id << " ===" << endl;
+    cout << "1. Ten bai bao" << endl << "2. Tac gia" << endl;
+    cout << "3. Tap chi" << endl << "4. Thoi gian cong bo" << endl << "0. Thoat" << endl;
     int type=0;
     while (type==0)
     {
@@ -547,7 +541,7 @@ void List :: editArticle_General(Article &Art)
                 Art.editArticle_Time();
                 editArticle_General(Art);
                 break;
-            case 5:
+            case 0:
                 type=1;
                 break;
             default:
@@ -559,26 +553,19 @@ void List :: editArticle_General(Article &Art)
 ////////////////MENU EDIT JOURNAL PROCESS/////////////////
 void List :: List_editJournal() 
 {
-    char con = 'C'; //biến kiểm tra có tiếp tục công việc sửa thông tin bài báo (c/k)
     int i = 0; //Biến lấy phần tử bài báo trong list
-    while (con == 'C')
+    string JouID;
+    cout << "Nhap ma tap chi can sua thong tin: ";
+    cin >> JouID;
+    transform(JouID.begin(), JouID.end(), JouID.begin(), ::toupper);
+    if (List_isNewJournal(JouID)) cout << "Nhap sai ma tap chi!" << endl;
+    else 
     {
-        string JouID;
-        cout << "Nhap ma tap chi can sua thong tin: ";
-        cin >> JouID;
-        transform(JouID.begin(), JouID.end(), JouID.begin(), ::toupper);
-        if (List_isNewJournal(JouID)) cout << "Nhap sai ma tap chi!" << endl;
-        else 
+        for (i=0; i<Journal_count; i++)
         {
-            for (i=0; i<Journal_count; i++)
-            {
-                if (Jou[i].J_id == JouID) break;
-            }
-            editJournal_General(Jou[i]);
+            if (Jou[i].J_id == JouID) break;
         }
-        cout << "Ban co muon tiep tuc khong? (c/k) ";
-        cin >> con;
-        con = toupper(con);
+        editJournal_General(Jou[i]);
     }
 }
 
@@ -586,8 +573,9 @@ void List :: List_editJournal()
 //////////////////////////////EDIT JOURNAL GENERAL///////////////////////////////
 void List :: editJournal_General(Journal &Jou) 
 {
-    cout << "1. Chinh sua ten tap chi" << endl << "2. Chinh sua tong bien tap" << endl;
-    cout << "3. Chinh sua NXB" << endl << "4: Thoat" << endl;
+    cout << endl << "=== CHINH SUA TAP CHI : " << Jou.J_id << " ===" << endl;
+    cout << "1. Ten tap chi" << endl << "2. Tong bien tap" << endl;
+    cout << "3. Nha xuat ban" << endl << "0. Thoat" << endl;
     int type=0;
     while (type==0)
     {
@@ -619,7 +607,7 @@ void List :: editJournal_General(Journal &Jou)
                 editJournal_General(Jou);
                 break;
             }
-            case 4:
+            case 0:
                 type=1;
                 break;
             default:
@@ -630,59 +618,47 @@ void List :: editJournal_General(Journal &Jou)
 ////////////////////////////////EDIT PUBLISHER PROCESS//////////////////////////
 void List :: List_editPublisher() 
 {
-    char con = 'C'; //biến kiểm tra có tiếp tục công việc sửa thông tin bài báo (c/k)
     int i = 0; //Biến lấy phần tử bài báo trong list
-    while (con == 'C')
+    string PubID;
+    cout << "Nhap ma NXB can sua thong tin: ";
+    cin >> PubID;
+    transform(PubID.begin(), PubID.end(), PubID.begin(), ::toupper);
+    if (List_isNewPublisher(PubID)) cout << "Nhap sai ma NXB!" << endl;
+    else 
     {
-        string PubID;
-        cout << "Nhap ma NXB can sua thong tin: ";
-        cin >> PubID;
-        transform(PubID.begin(), PubID.end(), PubID.begin(), ::toupper);
-        if (List_isNewPublisher(PubID)) cout << "Nhap sai ma NXB!" << endl;
-        else 
+        for (i=0; i<Publisher_count; i++)
         {
-            for (i=0; i<Publisher_count; i++)
-            {
-                if (Pub[i].Publisher_id == PubID) break;
-            }
-            Pub[i].editPublisher_Name();
+            if (Pub[i].Publisher_id == PubID) break;
         }
-        cout << "Ban co muon tiep tuc khong? (c/k) ";
-        cin >> con;
-        con = toupper(con);
+        cout << endl << "=== CHINH SUA NHA XUAT BAN : " << Pub[i].Publisher_id << " ===" << endl;
+        Pub[i].editPublisher_Name();
     }
 }
 ///////////////////////////MENU EDIT AUTHOR PROCESS////////////////////////////
 void List :: List_editAuthor() 
 {
-    char con = 'C'; //biến kiểm tra có tiếp tục công việc sửa thông tin tác giả (c/k)
     int i = 0; //Biến lấy phần tử tác giả trong list
-    while (con == 'C')
+    string AuthID;
+    cout << "Nhap ma tac gia can sua thong tin: ";
+    cin >> AuthID;
+    transform(AuthID.begin(), AuthID.end(), AuthID.begin(), ::toupper);
+    if (List_isNewAuthor(AuthID)) cout << "Nhap sai ma tac gia!" << endl;
+    else 
     {
-        string AuthID;
-        cout << "Nhap ma tac gia can sua thong tin: ";
-        cin >> AuthID;
-        transform(AuthID.begin(), AuthID.end(), AuthID.begin(), ::toupper);
-        if (List_isNewAuthor(AuthID)) cout << "Nhap sai ma tac gia!" << endl;
-        else 
+        for (i=0; i<Author_count; i++)
         {
-            for (i=0; i<Author_count; i++)
-            {
-                if (Auth[i].author_id == AuthID) break;
-            }
-            editAuthor_General(Auth[i]);
+            if (Auth[i].author_id == AuthID) break;
         }
-        cout << "Ban co muon tiep tuc khong? (c/k) ";
-        cin >> con;
-        con = toupper(con);
+        editAuthor_General(Auth[i]);
     }
 }
 
 ////////////////////////////EDIT AUTHOR GENERAL/////////////////////////////
 void List :: editAuthor_General(Author &Auth) 
 {
-    cout << "1. Chinh sua ten tac gia" << endl << "2. Chinh sua noi cong tac" << endl;
-    cout << "3. Chinh sua linh vuc lam viec" << endl << "4. Chinh sua trinh do" << endl << "5: Thoat" << endl;
+    cout << endl << "=== CHINH SUA TAC GIA : " << Auth.author_id <<  " ===" << endl;
+    cout << "1. Ten tac gia" << endl << "2. Noi cong tac" << endl;
+    cout << "3. Linh vuc lam viec" << endl << "4. Trinh do" << endl << "0. Thoat" << endl;
     int type=0;
     while (type==0)
     {
@@ -706,7 +682,7 @@ void List :: editAuthor_General(Author &Auth)
                 Auth.editAuthor_Degree();
                 editAuthor_General(Auth);
                 break;
-            case 5:
+            case 0:
                 type=1;
                 break;
             default:
@@ -1570,7 +1546,7 @@ void MENU(List L)
     int temp;
     do
     {
-        cout<<endl<<endl<<"===== QUAN LY CAC BAI BAO KHOA HOC ====="<<endl<<endl<<endl;
+        cout<<endl<<endl<<"===== QUAN LY CAC BAI BAO KHOA HOC ====="<<endl<<endl;
         cout<<"1. Hien thi thong tin"<<endl;
         cout<<"2. Thong ke"<<endl;
         cout<<"3. Tim kiem"<<endl;
@@ -1578,7 +1554,7 @@ void MENU(List L)
         cout<<"5. Chinh sua"<<endl;
         cout<<"6. Chen"<<endl;
         cout<<"7. Xoa"<<endl;
-        cout<<"0. Thoat"<<endl;
+        cout<<"0. Thoat"<<endl<<endl;
         cout<<"Vui long nhap lua chon cua ban: ";
         cin>>temp;
         switch (temp)
@@ -1622,6 +1598,7 @@ void MENU(List L)
                     L.List_displayJournal();
                     system("pause");
                     system("cls");
+                    temp1 =0;
                     break;
                 case 4:
                     L.List_displayPublisher();
@@ -1643,11 +1620,11 @@ void MENU(List L)
             system("cls");
             do
             {
-                cout<<"==== THONG KE ===="<<endl<<endl;
-                cout<<"1. So luong bai bao theo tac gia"<<endl;
-                cout<<"2. So luong bai bao theo tap chi"<<endl;
-                cout<<"3. So luong bai bao theo nha xuat ban"<<endl;
-                cout<<"4. So luong bai bao theo nam"<<endl;
+                cout<<"==== THONG KE SO LUONG BAI BAO ===="<<endl<<endl;
+                cout<<"1. Theo tac gia"<<endl;
+                cout<<"2. Theo tap chi"<<endl;
+                cout<<"3. Theo nha xuat ban"<<endl;
+                cout<<"4. Theo nam"<<endl;
                 cout<<"0. Thoat"<<endl;
                 cout<<"Vui long nhap lua chon cua ban: ";
                 cin>>temp2;
