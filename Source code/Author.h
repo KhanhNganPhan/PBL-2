@@ -1,9 +1,9 @@
+#pragma once
 #ifndef AUTHOR_H
 #define AUTHOR_H
 #include <iostream>
 #include <string.h>
-#include <fstream>
-#include "Article.h"
+
 using namespace std;
 class List;
 class Author

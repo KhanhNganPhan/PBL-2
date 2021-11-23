@@ -2,7 +2,7 @@
 #define JOURNAL_H
 #include <iostream>
 #include <string.h>
-#include "Article.h"
+
 using namespace std;
 
 class Journal {

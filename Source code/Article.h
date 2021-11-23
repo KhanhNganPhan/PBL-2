@@ -1,8 +1,9 @@
+#pragma once
+
 #ifndef ARTICLE_H
 #define ARTICLE_H
 #include <iostream>
 #include <string.h>
-#include <fstream>
 using namespace std;
 class List;
 class Article {
