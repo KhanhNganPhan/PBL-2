@@ -30,7 +30,7 @@ void MENU(List L)
             break;
         case 1:
             int temp1;
-            system("cls");
+            //system("cls");
             do
             {
                 m.subMenu_Display();
@@ -39,43 +39,48 @@ void MENU(List L)
                     {
                     case 0:
                         temp1 =0;
-                        system("cls");
+                        //system("cls");
                         break;
                     case 1:
                         L.List_displayAll();
+                        cout << endl;
                         system("pause");
-                        system("cls");
+                        //system("cls");
                         temp1 =0;
                         break;
                     case 2:
                         L.List_displayAuthor();
+                        cout << endl;
                         system("pause");
-                        system("cls");
+                        //system("cls");
                         temp1 =0;
                         break;
                     case 3:
                         L.List_displayJournal();
+                        cout << endl;
                         system("pause");
-                        system("cls");
+                        //system("cls");
                         temp1 =0;
                         break;
                     case 4:
                         L.List_displayPublisher();
+                        cout << endl;
                         system("pause");
-                        system("cls");
+                        //system("cls");
                         temp1 =0;
                         break;
                     default:
                         cout<<"Ban da nhap sai!!!"<<endl;
+                        cout << endl;
                         system("pause");
-                        system("cls");
+                        //system("cls");
                         break;
                     }
             } 
             while(temp1);
             break;
         case 2: 
-            system("cls");
+            //system("cls");
             int temp2;
             do
             {
@@ -85,46 +90,51 @@ void MENU(List L)
                 {
                 case 0:
                     temp2 =0; 
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
                     L.List_editArticle(m);
-                    //L.List_overwriteNewArticle();
+                    L.List_overwriteNewArticle();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp2 =0;
                     break;
                 case 2:
                     L.List_editAuthor(m);
-                    //L.List_overwriteNewAuthor();
+                    L.List_overwriteNewAuthor();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp2 =0;
                     break;
                 case 3:
                     L.List_editJournal(m);
-                    //L.List_overwriteNewJournal();
+                    L.List_overwriteNewJournal();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp2 =0;
                     break;
                 case 4:
                     L.List_editPublisher();
-                    //L.List_overwriteNewPublisher();
+                    L.List_overwriteNewPublisher();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp2 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             } while (temp2);
             break;
         case 3:
-            system("cls");
+            //system("cls");
             int temp3;
             do
             {
@@ -134,10 +144,10 @@ void MENU(List L)
                 {
                 case 0:
                     temp3 =0;
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
-                    system("cls");
+                    //system("cls");
                     int case1;
                     do 
                     {   
@@ -150,9 +160,10 @@ void MENU(List L)
                                 cin >> Mabaibao;
                                 removeSpaces(Mabaibao);
                                 L.List_AddArticle(Mabaibao);
-                                //L.List_UpdateNumArtOfAllList();
+                                L.List_UpdateNumArtOfAllList();
+                                cout << endl;
                                 system("pause");
-                                system("cls");
+                                //system("cls");
                                 case1 = 0;
                                 break;
                             case 2:
@@ -160,58 +171,64 @@ void MENU(List L)
                                 cin >> Mabaibao;
                                 removeSpaces(Mabaibao);
                                 L.List_InsertArticle(Mabaibao);
-                                //L.List_UpdateNumArtOfAllList();
+                                L.List_UpdateNumArtOfAllList();
+                                cout << endl;
                                 system("pause");
-                                system("cls");
+                                //system("cls");
                                 case1 = 0;
                                 break;
                             case 0:
                                 case1 = 0;
+                                cout << endl;
                                 system("pause");
-                                system("cls");
+                                //system("cls");
                                 break;
                         }
                     } while(case1);
-                    system("cls");
+                    //system("cls");
                     temp3 =0;
                     break;
                 case 2:
                     cout << "Nhap ma tac gia: ";
                     cin >> Matacgia;
-                    removeSpaces(Mabaibao);
+                    removeSpaces(Matacgia);
                     L.List_AddAuthor(Matacgia);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp3 =0;
                     break;
                 case 3:
                     cout << "Nhap ma tap chi: ";
                     cin >> Matapchi;
-                    removeSpaces(Mabaibao);
+                    removeSpaces(Matapchi);
                     L.List_AddJournal(Matapchi);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp3 =0;
                     break;
                 case 4:
                     cout << "Nhap ma NXB: ";
                     cin >> MaNXB;
-                    removeSpaces(Mabaibao);
+                    removeSpaces(MaNXB);
                     L.List_AddPublisher(MaNXB);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp3 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             } while (temp3);
             break;
         case 4:
-            system("cls");
+            //system("cls");
             int temp4;
             do
             {
@@ -221,24 +238,26 @@ void MENU(List L)
                 {
                 case 0:
                     temp4 =0;
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
                     cout<<"Nhap ma bai bao can xoa: ";
                     cin>>Mabaibao;
                     removeSpaces(Mabaibao);
                     L.List_DeleteArticleByArtID(Mabaibao);
-                    //L.List_UpdateNumArtOfAllList();
+                    L.List_UpdateNumArtOfAllList();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp4 =0;
                     break;
                 case 2:
                     cout << "Nhap vi tri bai bao can xoa: ";
                     cin >> pos;
                     L.List_DeleteArticleByPos(pos-1);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp4 =0;
                     break;
                 case 3:
@@ -246,8 +265,9 @@ void MENU(List L)
                     cin >>Matacgia;
                     removeSpaces(Mabaibao);
                     L.List_DeleteAuthorByAuthID(Matacgia);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp4 =0;
                     break;
                 case 4:
@@ -255,8 +275,9 @@ void MENU(List L)
                     cin >>Matapchi;
                     removeSpaces(Mabaibao);
                     L.List_DeleteJournalByJouID(Matacgia);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp4 =0;
                     break;
                 case 5:
@@ -264,21 +285,23 @@ void MENU(List L)
                     cin >>MaNXB;
                     removeSpaces(Mabaibao);
                     L.List_DeletePublisherByPubID(Matacgia);
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp4 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             } while (temp4);
             break;
         case 5:
             int temp5;
-            system("cls");
+            //system("cls");
             do
             {
                 m.subMenu_NumOfArticle();
@@ -287,44 +310,49 @@ void MENU(List L)
                 {
                 case 0:
                     temp5 = 0;
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
                     L.List_displayNumofArtPerAuth();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp5 = 0;
                     break;
                 case 2:
                     L.List_displayNumofArtPerJour();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp5 = 0;
                     break;
                 case 3:
                     L.List_displayNumofArtPerPubl();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp5 = 0;
                     break;
                 case 4:
                     // chua co
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp5 = 0;
                     break;
                 
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             }
             while(temp5);
             break;   
         case 6:
-            system("cls");
+            //system("cls");
             int temp6;
             do
             {
@@ -334,7 +362,7 @@ void MENU(List L)
                 {
                 case 0:
                     temp6 =0;
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
                     cout<<"Nhap ten bai bao can tim kiem: ";
@@ -342,55 +370,62 @@ void MENU(List L)
                     getline(cin,Tenbaibao);
                     removeSpaces(Tenbaibao);
                     if(L.List_FindArticleByName(Tenbaibao)==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 2:
                     if(L.List_FindArtByArtID()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 3:
                     if(L.List_FindArticleByAuthorName()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 4:
                     if(L.List_FindArtByAuthID()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 5:
                     if(L.List_FindArtByJourID()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 6:
                     if(L.List_FindArtByPublID()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 case 7:
                     if(L.List_FindArtByYear()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp6 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
-                    system("cls");
+                    //system("cls");
                     break;
                 }       
             } while (temp6);
             break;
         case 7:
-            system("cls");
+            //system("cls");
             int temp7;
             do
             {   
@@ -400,12 +435,13 @@ void MENU(List L)
                 {
                 case 0:
                     temp7 =0;
-                    system("cls");
+                    //system("cls");
                     break;
                 case 1:
                     L.List_SortArtByNameAuthor();
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp7 =0;
                     break;
                 case 2:
@@ -420,8 +456,9 @@ void MENU(List L)
                     {
                         L.List_SortArtByNameArticle(ArtNameDescending);
                     }
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp7 =0;
                     break;
                 case 3:
@@ -436,14 +473,16 @@ void MENU(List L)
                     {
                         L.List_SortArtByYear(YearDescending);
                     }
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     temp7 =0;
                     break;
                 default:
                     cout<<"Ban da nhap sai!!!"<<endl;
+                    cout << endl;
                     system("pause");
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             } 
@@ -451,8 +490,9 @@ void MENU(List L)
             break;
         default:
             cout<<"Ban da nhap sai!!!"<<endl;
+            cout << endl;
             system("pause");
-            system("cls");
+            //system("cls");
             break;
         }
     } while (temp);

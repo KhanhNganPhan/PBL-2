@@ -80,7 +80,7 @@ void menu::subMenu_FindArticle()
     cout << "                        |      4. Theo ma tac gia                          |" << endl;
     cout << "                        |      5. Theo ma tap chi                          |" << endl;
     cout << "                        |      5. Theo ma NXB                              |" << endl;
-    cout << "                        |      5. Theo nam xuat ban                        |" << endl;
+    cout << "                        |      6. Theo nam xuat ban                        |" << endl;
     cout << "                        |      0. Thoat                                    |" << endl;
     cout << "                         -------------------------------------------------- " << endl;
     cout<<"Vui long nhap lua chon cua ban: ";
@@ -107,7 +107,7 @@ void menu::subMenu_Edit()
     cout << "                        |      1. Bai bao                                  |" << endl;
     cout << "                        |      2. Tac gia                                  |" << endl;
     cout << "                        |      3. Tap chi                                  |" << endl;
-    cout << "                        |      3. Nha xuat ban                             |" << endl;
+    cout << "                        |      4. Nha xuat ban                             |" << endl;
     cout << "                        |      0. Thoat                                    |" << endl;
     cout << "                         -------------------------------------------------- " << endl;
     cout<<"Vui long nhap lua chon cua ban: ";
@@ -121,7 +121,7 @@ void menu::subMenu_Add()
     cout << "                        |      1. Bai bao                                  |" << endl;
     cout << "                        |      2. Tac gia                                  |" << endl;
     cout << "                        |      3. Tap chi                                  |" << endl;
-    cout << "                        |      3. Nha xuat ban                             |" << endl;
+    cout << "                        |      4. Nha xuat ban                             |" << endl;
     cout << "                        |      0. Thoat                                    |" << endl;
     cout << "                         -------------------------------------------------- " << endl;
     cout<<"Vui long nhap lua chon cua ban: ";
@@ -186,7 +186,7 @@ void menu::subMenu2_editAuthor(string authid)
     cout << "                        |            CHINH SUA TAC GIA: "<< authid <<"                |" << endl;
     cout << "                        |      1. Ten tac gia                              |" << endl;
     cout << "                        |      2. Noi cong tac                             |" << endl;
-    cout << "                        |      3. inh vuc lam viec                         |" << endl;
+    cout << "                        |      3. Linh vuc lam viec                        |" << endl;
     cout << "                        |      4. Trinh do                                 |" << endl;
     cout << "                        |      0. Thoat                                    |" << endl;
     cout << "                         -------------------------------------------------- " << endl;

@@ -94,7 +94,8 @@ void List::List_getAuthor(ifstream &inFile)
 void List::List_displayPublisher()
 {
 
-    cout<< left << setw (15) <<"Ma NXB"<< "Ten NXB" << endl;
+    cout << endl << left << setw (15) <<"Ma NXB"<< "Ten NXB" << endl;
+    cout << "--------------------------------------------------" << endl;
     for(int i =0;i < Publisher_count;i++)
     {
         cout<< Pub[i];
@@ -103,7 +104,8 @@ void List::List_displayPublisher()
 
 void List::List_displayJournal()
 {
-    cout << left << setw(15) << "Ma tap chi" << left << setw(50) << "Ten tap chi" << left << setw(30) << "Ten tong bien tap" << left << setw(10) << "Ma NXB"<<endl;
+    cout << endl << left << setw(15) << "Ma tap chi" << left << setw(50) << "Ten tap chi" << left << setw(30) << "Ten tong bien tap" << left << setw(10) << "Ma NXB"<<endl;
+    cout << "------------------------------------------------------------------------------------------------------" << endl;
     for(int i=0;i<Journal_count;i++)
     {
         cout<<Jou[i];
@@ -112,8 +114,9 @@ void List::List_displayJournal()
 
 void List::List_displayAuthor()
 {
-    cout << left << setw(15) << "Ma TG"  << left << setw(20) << "Ho dem" << left << setw(15)<< "Ten" << left << setw(15) << "Noi cong tac";
-    cout << left << setw(30) << "Linh vuc nghien cuu" << left << setw(10) << "Trinh do" << endl;
+    cout << endl << left << setw(15) << "Ma TG"  << left << setw(20) << "Ho dem" << left << setw(15)<< "Ten" << left << setw(15) << "Noi cong tac";
+    cout  << left << setw(30) << "Linh vuc nghien cuu" << left << setw(10) << "Trinh do" << endl ;
+    cout << "----------------------------------------------------------------------------------------------------------" << endl;
     for(int i=0;i<Author_count;i++)
     {
         cout<<Auth[i];
@@ -124,7 +127,8 @@ void List::List_displayAuthor()
 
 void List::List_displayAll()
 {
-    cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45)<<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+    cout<< endl << left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45)<<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl ;
+    cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
     for(int i=0;i< Article_count;i++)
     {
         cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
@@ -176,6 +180,7 @@ void List :: List_editArticle(menu m)
         {
             if (Art[i].Article_id == ArtID) break;
         }
+        m.subMenu2_editArticle(Art[i].Article_id);
         editArticle_General(m,Art[i]);
     }
 }
@@ -184,7 +189,6 @@ void List :: List_editArticle(menu m)
 /////////////////////////////EDIT ARTICLE GENERAL//////////////////////////////
 void List :: editArticle_General(menu m, Article &Art) 
 {
-    m.subMenu2_editArticle(Art.Article_id);
     int type=0;
     while (type==0)
     {
@@ -219,7 +223,7 @@ void List :: editArticle_General(menu m, Article &Art)
                 Art.editArticle_Journal();
                 if (List_isNewJournal(Art.Journal_id))
                 {
-                    cout << "Tac tap chi ton tai!" << endl;
+                    cout << "Tap chi chua ton tai!" << endl;
                     cout << "Them tap chi moi? (c/k) ";
                     char type;
                     cin >> type;
@@ -258,6 +262,7 @@ void List :: List_editJournal(menu m)
         {
             if (Jou[i].J_id == JouID) break;
         }
+        m.subMenu2_editJournal(Jou[i].J_id);
         editJournal_General(m, Jou[i]);
     }
 }
@@ -266,7 +271,6 @@ void List :: List_editJournal(menu m)
 //////////////////////////////EDIT JOURNAL GENERAL///////////////////////////////
 void List :: editJournal_General(menu m, Journal &Jou) 
 {
-    m.subMenu2_editJournal(Jou.J_id);
     int type=0;
     while (type==0)
     {
@@ -340,6 +344,7 @@ void List :: List_editAuthor(menu m)
         {
             if (Auth[i].author_id == AuthID) break;
         }
+        m.subMenu2_editAuthor(Auth[i].author_id);
         editAuthor_General(m, Auth[i]);
     }
 }
@@ -347,7 +352,6 @@ void List :: List_editAuthor(menu m)
 ////////////////////////////EDIT AUTHOR GENERAL/////////////////////////////
 void List :: editAuthor_General(menu m, Author &Auth) 
 {
-    m.subMenu2_editAuthor(Auth.author_id);
     int type=0;
     while (type==0)
     {
@@ -447,8 +451,8 @@ void List::List_AddAuthor(string AuthorID)
         {
             this->Auth[i] = newAuthor[i];                      //Chép từ mảng tạm sang danh sách chính
         }
-        //this->List_overwriteNewAuthor();                       //Update vào file dữ liệu tác giả
-        //this->List_overwriteInitialNumber();                   //Update file số lượng
+        this->List_overwriteNewAuthor();                       //Update vào file dữ liệu tác giả
+        this->List_overwriteInitialNumber();                   //Update file số lượng
     }
     else cout << "Tac gia da ton tai!" << endl;
 }
@@ -475,8 +479,8 @@ void List::List_AddPublisher(string PubID)
         {
             this->Pub[i] = newPublisher[i];               //Chép từ mảng tạm sang danh sách chính
         }
-        //this->List_overwriteNewPublisher();                       //Update vào file dữ liệu NXB
-        //this->List_overwriteInitialNumber();                        //Update vào file số lượng
+        this->List_overwriteNewPublisher();                       //Update vào file dữ liệu NXB
+        this->List_overwriteInitialNumber();                        //Update vào file số lượng
     }
     else cout << "NXB da ton tai!";
 }
@@ -508,8 +512,8 @@ void List::List_AddJournal(string JournalID)
         {
             this->Jou[i] = newJournal[i];               //Chép từ mảng tạm sang danh sách chính
         }
-        //this->List_overwriteNewJournal();                      //Update vào file dữ liệu tạp chí
-        //this->List_overwriteInitialNumber();                   //Update file số lượng
+        this->List_overwriteNewJournal();                      //Update vào file dữ liệu tạp chí
+        this->List_overwriteInitialNumber();                   //Update file số lượng
     }
     else cout << "Tap chi da ton tai!";
 }
@@ -547,8 +551,8 @@ void List::List_AddArticle(string ArtID)
         {
             this->Art[i] = newArticle[i];                      //Chép từ mảng tạm sang danh sách chính
         }
-        //this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
-        //this->List_overwriteInitialNumber();                   //Update file số lượng
+        this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
+        this->List_overwriteInitialNumber();                   //Update file số lượng
     }
     else cout << "Bai bao da ton tai!" << endl;
 }
@@ -591,8 +595,8 @@ void List::List_InsertArticle(string ArtID)
             this->Art[i] = newArticle[i-1];                      //Chép bài báo từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
         }
         Art[pos-1] = a;
-        //this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
-        //this->List_overwriteInitialNumber();                   //Update file số lượng
+        this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
+        this->List_overwriteInitialNumber();                   //Update file số lượng
     }
     else cout << "Bai bao da ton tai!" << endl;
 }
@@ -632,6 +636,7 @@ void List::List_UpdateNumArtOfAllList()
 void List::List_displayNumofArtPerAuth()
 {
     cout<< left<< setw(25)<<"Tac gia"<< left<< setw(10)<<"So bai bao"<<endl;
+    cout << "-----------------------------------" << endl;
     for(int i=0;i< Author_count;i++)
     {
         cout<< left<< setw(25)<<Auth[i].getName()<< left<< setw(10)<<Auth[i].Article_count<<endl;
@@ -642,6 +647,7 @@ void List::List_displayNumofArtPerAuth()
 void List::List_displayNumofArtPerJour()
 {
     cout<< left<< setw(50)<<"Tap chi"<< left<< setw(10)<<"So bai bao"<<endl;
+    cout << "------------------------------------------------------------" << endl;
     for(int i=0;i<Journal_count;i++)
     {
         cout<< left<< setw(50)<<Jou[i].getName()<< left<< setw(10)<<Jou[i].Article_count<<endl;
@@ -659,6 +665,7 @@ string List::List_getPublisherIDbyJourID(string Journal_ID)
 void List:: List_displayNumofArtPerPubl()
 {
     cout<< left<< setw(40)<<"Nha xuat ban"<< left<< setw(10)<<"So bai bao"<<endl;
+    cout << "---------------------------------------------------" << endl;
     for(int i=0;i<Publisher_count;i++)
     {
         cout<< left<< setw(40)<<Pub[i].Publisher_name<< left<< setw(10)<<Pub[i].Article_count<<endl;
@@ -705,8 +712,8 @@ void List::List_DeleteArticleByArtID(string ArtID)
             this->Art[i] = newArticle[i+1];                      //Chép bài báo từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
         }
         cout << "Xoa thanh cong!"<<endl;
-        //this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
-        //this->List_overwriteInitialNumber();                   //Update file số lượng
+        this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
+        this->List_overwriteInitialNumber();                   //Update file số lượng
     }
 }
 ///////////////////////////////XÓA BÀI BÁO THEO VỊ TRÍ/////////////////////////////////
@@ -736,8 +743,8 @@ void List::List_DeleteArticleByPos(int pos)
         this->Art[i] = newArticle[i+1];                      //Chép bài báo từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
     }
     cout << "Xoa thanh cong!"<<endl;
-    //this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
-    //this->List_overwriteInitialNumber();                   //Update file số lượng  
+    this->List_overwriteNewArticle();                      //Update vào file dữ liệu bài báo
+    this->List_overwriteInitialNumber();                   //Update file số lượng  
     }
 }
 ///////////////////////////////XÓA TÁC GIẢ THEO MÃ/////////////////////////////////
@@ -781,8 +788,8 @@ void List::List_DeleteAuthorByAuthID(string AuthID)
                 this->Auth[i] = newAuthor[i+1];                      //Chép tác giả từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
             }
             cout << "Xoa thanh cong!"<<endl;
-            //this->List_overwriteNewAuthor();                      //Update vào file dữ liệu tác giả
-            //this->List_overwriteInitialNumber();                   //Update file số lượng
+            this->List_overwriteNewAuthor();                      //Update vào file dữ liệu tác giả
+            this->List_overwriteInitialNumber();                   //Update file số lượng
         }
         
     }
@@ -828,8 +835,8 @@ void List::List_DeleteJournalByJouID(string JouID)
                 this->Jou[i] = newJournal[i+1];                      //Chép TẠP CHÍ từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
             }
             cout << "Xoa thanh cong!"<<endl;
-            //this->List_overwriteNewJournal();                      //Update vào file dữ liệu TẠP CHÍ
-            //this->List_overwriteInitialNumber();                   //Update file số lượng
+            this->List_overwriteNewJournal();                      //Update vào file dữ liệu TẠP CHÍ
+            this->List_overwriteInitialNumber();                   //Update file số lượng
         }
         
     }
@@ -875,8 +882,8 @@ void List::List_DeletePublisherByPubID(string PubID)
                 this->Pub[i] = newPublisher[i+1];                      //Chép NXB từ vị trí pos->Artcount-1 từ mảng tạm sang danh sách chính
             }
             cout << "Xoa thanh cong!"<<endl;
-            //this->List_overwriteNewPublisher();                      //Update vào file dữ liệu NXB
-            //this->List_overwriteInitialNumber();                   //Update file số lượng
+            this->List_overwriteNewPublisher();                      //Update vào file dữ liệu NXB
+            this->List_overwriteInitialNumber();                   //Update file số lượng
         }
         
     }
@@ -925,26 +932,24 @@ void List::List_overwriteNewJournal()
     outFile << "Ma tap chi|Ten tap chi				    |Ten tong bien tap	    |Ma NXB\n";
     for (int i=0; i< Journal_count ; i++)
     {
-        outFile <<  Pub[i].Publisher_id << "|";
-        outFile <<  Pub[i].Publisher_name << ",\n";
-    }
-    outFile.close();
-    
-}
-////////////////////////////////Ghi mới vào file Publiser.txt///////
-void List:: List_overwriteNewPublisher()
-{
-    ofstream outFile("../Data/Publisher.txt", ofstream::trunc);
-    outFile << "Ma NXB|Ten NXB	\n";
-    for (int i=0; i< Publisher_count ; i++)
-    {
         outFile <<  Jou[i].J_id << "|";
         outFile <<  Jou[i].J_name << "|";
         outFile <<  Jou[i].J_editor << "|";
         outFile <<  Jou[i].Publisher_id << ",\n";
     }
     outFile.close();
-
+}
+////////////////////////////////Ghi mới vào file Publiser.txt///////
+void List:: List_overwriteNewPublisher()
+{
+    ofstream outFile("../Data/Publisher.txt", ofstream::trunc);
+    outFile << "Ma NXB|Ten NXB\n";
+    for (int i=0; i< Publisher_count ; i++)
+    {
+        outFile <<  Pub[i].Publisher_id << "|";
+        outFile <<  Pub[i].Publisher_name << ",\n";
+    }
+    outFile.close();
 }
 /////////////////////////////Ghi mới vào file InitialNum////////////////
 void List::List_overwriteInitialNumber()
@@ -1033,8 +1038,9 @@ bool List::List_FindArticleByName(string name)
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout <<endl<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
                 cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
                 flag=true;;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25);
@@ -1061,9 +1067,10 @@ bool List::List_FindArticleByAuthorName()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
-                cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
-                flag=true;;
+                cout <<endl<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout  <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+                flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25);
             cout << this->List_getAuthorNamebyID(Art[i].Author_id);
@@ -1089,8 +1096,9 @@ bool List::List_FindArtByAuthID()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout <<endl<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
                 cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
                 flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
@@ -1118,9 +1126,10 @@ bool List::List_FindArtByJourID()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout <<endl<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
                 cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
-                flag=true;;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+                flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
             cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl;
@@ -1147,9 +1156,10 @@ bool List::List_FindArtByPublID()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
-                cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
-                flag=true;;
+                cout <<endl << left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout  <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+                flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
             cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl;
@@ -1169,9 +1179,10 @@ bool List::List_FindArtByYear()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout  <<endl << left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
                 cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
-                flag=true;;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+                flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
             cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl;
@@ -1193,9 +1204,10 @@ bool List::List_FindArtByArtID()
         {
             if (flag==false) 
             {
-                cout<< left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
+                cout <<endl << left << setw(15)<<"Ma bao"<< left << setw(65)<<"Ten cong bo"<< left << setw(25)<<"Tac gia"<< left << setw(45);
                 cout <<"Tap chi"<< left << setw(10)<<"Thoi gian"<<endl;
-                flag=true;;
+                cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+                flag=true;
             }
             cout << left << setw(15)<< Art[i].Article_id << left << setw(65) << Art[i].Article_name << left << setw(25) << this->List_getAuthorNamebyID(Art[i].Author_id);
             cout << left << setw(45) << this->List_getJournalNamebyID(Art[i].Journal_id) << left << setw(10)<< Art[i].Publish_time << endl;
