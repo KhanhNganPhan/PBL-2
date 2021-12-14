@@ -896,7 +896,7 @@ void List::List_DeletePublisherByPubID(string PubID)
 void List::List_overwriteNewAuthor() 
 {
     ofstream outFile("../Data/Author.txt", ofstream::trunc);
-    outFile << "Ma TG |Ho dem	|Ten  |Noi cong tac|Linh vuc nghien cuu|Trinh do\n";
+    outFile << "Ma TG|Ho dem|Ten|Noi cong tac|Linh vuc nghien cuu|Trinh do\n";
     for (int i=0; i<Author_count; i++)
     {
         outFile <<  Auth[i].author_id << "|";
@@ -913,7 +913,7 @@ void List::List_overwriteNewAuthor()
 void List::List_overwriteNewArticle()
 {
     ofstream outFile("../Data/Article.txt", ofstream::trunc);
-    outFile << "Ma bao	 |Ten cong bo							|Tac gia|Tap chi|Thoi gian\n";
+    outFile << "Ma bao|Ten cong bo|Tac gia|Tap chi|Thoi gian\n";
     for (int i=0; i<Article_count; i++)
     {
         outFile <<  Art[i].Article_id << "|";
@@ -929,7 +929,7 @@ void List::List_overwriteNewArticle()
 void List::List_overwriteNewJournal()
 {
     ofstream outFile("../Data/Journal.txt", ofstream::trunc);
-    outFile << "Ma tap chi|Ten tap chi				    |Ten tong bien tap	    |Ma NXB\n";
+    outFile << "Ma tap chi|Ten tap chi|Ten tong bien tap|Ma NXB\n";
     for (int i=0; i< Journal_count ; i++)
     {
         outFile <<  Jou[i].J_id << "|";
@@ -979,7 +979,7 @@ void SWAP(Article &x, Article &y)
 //////////////////////////// SORT BY YEAR //////////////////////////// 
 void List::List_SortArtByYear( bool (*SS)(Article, Article))
 {
-    for(int i=0;i <Article_count ;i++)
+    for(int i=0;i <Article_count -1 ;i++)
     {
         for(int j=i+1; j< Article_count ;j++)
         {
@@ -996,7 +996,7 @@ void List::List_SortArtByYear( bool (*SS)(Article, Article))
 
 void List::List_SortArtByNameAuthor()
 {
-    for(int i =0;i<Article_count;i++)
+    for(int i =0;i<Article_count-1;i++)
     {
         for(int j=i+1;j<Article_count;j++)
         {
@@ -1012,7 +1012,7 @@ void List::List_SortArtByNameAuthor()
 
 void List::List_SortArtByNameArticle(bool (*SS)(Article, Article))
 {
-    for(int i =0;i<Article_count;i++)
+    for(int i =0;i<Article_count-1;i++)
     {
         for(int j=i+1;j<Article_count;j++)
         {
@@ -1026,7 +1026,7 @@ void List::List_SortArtByNameArticle(bool (*SS)(Article, Article))
 
 }
 ///////////////////////////////////////////////////////////FIND ARTICLE///////////////////////////////////////////////////////
-bool List::List_FindArticleByName(string name)
+bool List::List_FindArtByName(string name)
 {   
     bool flag = false;
     transform(name.begin(), name.end(), name.begin(), ::toupper);
@@ -1050,7 +1050,7 @@ bool List::List_FindArticleByName(string name)
     }
     return flag;
 }
-bool List::List_FindArticleByAuthorName()
+bool List::List_FindArtByAuthorName()
 {
     bool flag = false;
     cout<<"Nhap ten tac gia can tim kiem: ";

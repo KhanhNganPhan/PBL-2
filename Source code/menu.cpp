@@ -79,8 +79,8 @@ void menu::subMenu_FindArticle()
     cout << "                        |      3. Theo ten tac gia                         |" << endl;
     cout << "                        |      4. Theo ma tac gia                          |" << endl;
     cout << "                        |      5. Theo ma tap chi                          |" << endl;
-    cout << "                        |      5. Theo ma NXB                              |" << endl;
-    cout << "                        |      6. Theo nam xuat ban                        |" << endl;
+    cout << "                        |      6. Theo ma NXB                              |" << endl;
+    cout << "                        |      7. Theo nam xuat ban                        |" << endl;
     cout << "                        |      0. Thoat                                    |" << endl;
     cout << "                         -------------------------------------------------- " << endl;
     cout<<"Vui long nhap lua chon cua ban: ";

@@ -51,8 +51,8 @@ class List {
         bool List_FindArtByPublID();                              // Tìm kiếm bài của 1 tác giả theo Publiser ID
         bool List_FindArtByYear();                                // Tìm kiếm bài của 1 tác giả theo năms
         bool List_FindArtByArtID();                               // Tim kiem bai bao theo Article ID
-        bool List_FindArticleByName(string);                        //Tìm kiếm bài báo theo tên
-        bool List_FindArticleByAuthorName();                        //Tìm kiếm bài báo theo tên tác giả
+        bool List_FindArtByName(string);                          //Tìm kiếm bài báo theo tên
+        bool List_FindArtByAuthorName();                              //Tìm kiếm bài báo theo tên tác giả
         
         void List_SortArtByNameAuthor();                             // Sắp xếp bài báo theo tên tác giả
         void List_SortArtByYear(bool (*SS)(Article, Article));       // Sắp xếp bài báo theo theo năm

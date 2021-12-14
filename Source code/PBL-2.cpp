@@ -263,7 +263,7 @@ void MENU(List L)
                 case 3:
                     cout <<"Nhap ma tac gia can xoa: ";
                     cin >>Matacgia;
-                    removeSpaces(Mabaibao);
+                    removeSpaces(Matacgia);
                     L.List_DeleteAuthorByAuthID(Matacgia);
                     cout << endl;
                     system("pause");
@@ -273,8 +273,8 @@ void MENU(List L)
                 case 4:
                     cout <<"Nhap ma tap chi can xoa: ";
                     cin >>Matapchi;
-                    removeSpaces(Mabaibao);
-                    L.List_DeleteJournalByJouID(Matacgia);
+                    removeSpaces(Matapchi);
+                    L.List_DeleteJournalByJouID(Matapchi);
                     cout << endl;
                     system("pause");
                     //system("cls");
@@ -283,8 +283,8 @@ void MENU(List L)
                 case 5:
                     cout <<"Nhap ma NXB can xoa: ";
                     cin >>MaNXB;
-                    removeSpaces(Mabaibao);
-                    L.List_DeletePublisherByPubID(Matacgia);
+                    removeSpaces(MaNXB);
+                    L.List_DeletePublisherByPubID(MaNXB);
                     cout << endl;
                     system("pause");
                     //system("cls");
@@ -369,7 +369,7 @@ void MENU(List L)
                     getenter;
                     getline(cin,Tenbaibao);
                     removeSpaces(Tenbaibao);
-                    if(L.List_FindArticleByName(Tenbaibao)==false) cout << "Khong tim thay bai bao!"<<endl;
+                    if(L.List_FindArtByName(Tenbaibao)==false) cout << "Khong tim thay bai bao!"<<endl;
                     cout << endl;
                     system("pause");
                     //system("cls");
@@ -383,7 +383,7 @@ void MENU(List L)
                     temp6 =0;
                     break;
                 case 3:
-                    if(L.List_FindArticleByAuthorName()==false) cout << "Khong tim thay bai bao!"<<endl;
+                    if(L.List_FindArtByAuthorName()==false) cout << "Khong tim thay bai bao!"<<endl;
                     cout << endl;
                     system("pause");
                     //system("cls");
