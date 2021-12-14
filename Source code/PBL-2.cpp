@@ -334,7 +334,7 @@ void MENU(List L)
                     temp5 = 0;
                     break;
                 case 4:
-                    // chua co
+                    L.List_displayNumofArtPerYear();
                     cout << endl;
                     system("pause");
                     //system("cls");

@@ -40,7 +40,8 @@
         "limits": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "streambuf": "cpp"
+        "streambuf": "cpp",
+        "map": "cpp"
     },
     "code-runner.runInTerminal":  true,
     "code-runner.executorMap": {"cpp": "cd $dir && g++ -std=c++14 *.cpp  -o $fileNameWithoutExt&& $dir$fileNameWithoutExt",}

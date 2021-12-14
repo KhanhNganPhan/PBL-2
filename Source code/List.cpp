@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <algorithm>
 #include <fstream>
+#include <map>
 #include "List.h"
-
 using namespace std;
 #define getenter fflush(stdin);
 
@@ -672,8 +672,19 @@ void List:: List_displayNumofArtPerPubl()
     }
 }
 
-void List ::List_displayNumofArtPerYear()
-{    
+void List::List_displayNumofArtPerYear()
+{
+    map <int, int> cnt;
+    for(int i=0; i< Article_count;i++)
+    {
+        cnt[Art[i].Publish_time]++;
+    }
+    cout << left<< setw(40)<<"Nam xuat ban"<< left<< setw(10)<<"So bai bao"<<endl;
+    cout << "---------------------------------------------------" << endl;
+    for(auto it : cnt)
+    {
+        cout << left<< setw(40)<< it.first << left<< setw(10)<< it.second <<endl;
+    }
 }
 
 
