@@ -3,8 +3,6 @@
 #include <iomanip>
 #include <fstream>
 #define getenter fflush(stdin);
-
-
 using namespace std;
 //////////////////////////////////////////////////////////////////CLASS PUBLISHER//////////////////////////////////////////////////////////////////
 
@@ -23,7 +21,7 @@ ostream &operator << (ostream &out, const Publisher &p)
 
 istream &operator >> (istream &in, Publisher &p) 
 {
-    cout << "Nhap ten NXB: ";
+    cout << endl <<"- Nhap ten NXB: ";
     getenter;
     getline(in,p.Publisher_name);
     return in;
@@ -31,7 +29,7 @@ istream &operator >> (istream &in, Publisher &p)
 
 void Publisher::editPublisher_Name()
 {
-    cout << "Nhap moi ten NXB: ";
+    cout << endl << "- Nhap moi ten NXB: ";
     getenter;
     getline(cin, Publisher_name);
 }

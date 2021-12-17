@@ -1,5 +1,5 @@
-Ma bao	 |Ten cong bo							|Tac gia|Tap chi|Thoi gian
-ART1|Cac chat uc che enzyme phan lap tu cay day lop bop|AU17|TCADCA|2021,
+Ma bao|Ten cong bo|Tac gia|Tap chi|Thoi gian
+ART1|tne bai moi|AU99|TCADCA|2021,
 ART2|Danh gia tac dong cua cao chiet methanol|AU22|DTKHCN|2021,
 ART3|Giai phap cong nghe ung dung hydrate biogas|AU6|DTKHCN|2021,
 ART4|Thiet ke may ep vien nen nhien lieu RDF tu chat thai sinh hoat|AU6|DTKHCN|2021,

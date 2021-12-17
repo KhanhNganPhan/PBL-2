@@ -3,9 +3,6 @@
 #include <iomanip>
 #include <fstream>
 #include "extraFunction.h"
-
-#define getenter fflush(stdin);
-
 using namespace std;
 #define getenter fflush(stdin);
 
@@ -26,15 +23,18 @@ string Author ::getLastName()
 {
     return this->lastName;
 }
+
 string Author ::getName()
 {
     string fullname = firstName + " " + lastName;
     return (fullname);
 }
+
 string Author ::getID()
 {
     return this->author_id;
 }
+
 void Author ::readf_author(ifstream &in)
 {
     string dummy;
@@ -52,21 +52,22 @@ ostream &operator << (ostream &out, const Author &a)
     out << a.work << left << setw(30) << a.field << left << setw(10) << a.degree << endl;
     return out;
 }
+
 istream &operator >> (istream &in, Author &a) 
 {
-    cout << "Nhap ho dem: "; 
+    cout << endl << "- Nhap ho dem: "; 
     getenter;
     getline(cin, a.firstName);
     removeSpaces(a.firstName);
-    cout << "Nhap ten: ";
+    cout << "- Nhap ten: ";
     cin >> a.lastName;
     removeSpaces(a.lastName);
-    cout << "Nhap noi cong tac: (DH__) ";
+    cout << "- Nhap noi cong tac: (DH__) ";
     cin >> a.work;
-    cout << "Nhap linh vuc nghien cuu: ";
+    cout << "- Nhap linh vuc nghien cuu: ";
     getenter;
     getline(cin, a.field);
-    cout << "Nhap trinh do: ";
+    cout << "- Nhap trinh do: ";
     getenter;
     getline(cin,a.degree);
     return in;
@@ -74,11 +75,11 @@ istream &operator >> (istream &in, Author &a)
 
 void Author::editAuthor_Name()
 {
-    cout << "Nhap ho va ten dem: ";
+    cout << endl <<"- Nhap ho va ten dem: ";
     getenter;
     getline(cin,firstName);
     removeSpaces(firstName);
-    cout << "Nhap ten: ";
+    cout << "- Nhap ten: ";
     getenter;
     getline(cin,lastName);
     removeSpaces(lastName);
@@ -86,21 +87,21 @@ void Author::editAuthor_Name()
 
 void Author::editAuthor_Work()
 {
-    cout << "Nhap moi noi cong tac: ";
+    cout << endl << "- Nhap moi noi cong tac: ";
     getenter;
     getline(cin,work);
 }
 
 void Author::editAuthor_Field()
 {
-    cout << "Nhap moi linh vuc lam viec: ";
+    cout << endl << "- Nhap moi linh vuc lam viec: ";
     getenter;
     getline(cin,field);
 }
 
 void Author::editAuthor_Degree()
 {
-    cout << "Nhap moi trinh do: ";
+    cout << endl << "- Nhap moi trinh do: ";
     getenter;
     getline(cin,degree);
 }

@@ -1,11 +1,10 @@
-Ma TG |Ho dem	|Ten  |Noi cong tac|Linh vuc nghien cuu|Trinh do
-AU1|Nguyen Ngoc|Chinh|DHNN|Ngon ngu hoc va van hoc|PGS TS,	
+Ma TG|Ho dem|Ten|Noi cong tac|Linh vuc nghien cuu|Trinh do
+AU1|Nguyen Ngoc|Chinh|DHNN|Ngon ngu hoc va van hoc|PGS TS,
 AU2|Nguyen Thi Quynh|Hoa|DHNN|Ngon ngu Anh va Dich thuat|PGS TS,
 AU3|Luu Quy|Khuong|DHNN|Ngon ngu hoc va van hoc|PGS TS,
 AU4|Dinh Thanh|Viet|DHDN|Ky thuat dien|PGS TS,
 AU5|Doan Quang|Vinh|DHDN|Ky thuat dien - Tu dong|PGS TS,
-AU6|Bui Van|Ga|DHDN|Ky thuat co khi|GS TSKH,
-AU7|Truong Le Bich|Tram|DHDN|Ky thuat hoa hoc|TS,
+AU7|phan khanh|ngan|dhkt|ki thuat|TS,
 AU8|Chu Thi|Thu|DHDN|Kinh te hoc|TS,
 AU9|Le Kim|Hung|DHBK|Ky thuat dien|GS TS,
 AU10|Truong Hoai|Chinh|DHBK|Ky thuat dan dung|PGS TS,
